@@ -1,0 +1,166 @@
+{% include 'index.html' %}
+{% block content %}
+    <style>
+        .additional {
+            padding: 20px;
+            border: 2px solid rgb(189, 189, 189);
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dropdown {
+            border: 2px solid rgb(189, 189, 189);
+            border-radius: 10px;
+        }
+        .dropdown .btn {
+            border: none;
+            background: transparent;
+            color: rgb(75, 74, 75);
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            margin-left:-45px;
+
+
+        }
+        .dropdown .btn .bi-chevron-down {
+            color: rgb(62, 60, 62);
+            margin-right:-30px;
+        }
+        .dropdown .dropdown-menu {
+            min-width: 200px;
+        }
+        .detailbox {
+            border: 2px solid rgb(189, 189, 189);
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+        .detailbox-container {
+            display: flex;
+            align-items: center;
+        }
+        .detailbox-container .bi-plus-lg {
+            margin-left: auto;
+            margin-right: 10px;
+            color: rgb(82, 80, 82);
+            cursor: pointer;
+        }
+        .btn-dark {
+            background-color: rgb(8, 8, 8);
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .plus {
+            border: 2px solid rgb(189, 189, 189);
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+    
+    <div class="container additional mt-5 w-50">
+        <h1>Additional Details</h1>
+        
+        <div class="dropdown ps-5  mt-4 mb-2">
+            <button class="btn btn-transparent text-start" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Martial Status
+                <i class="bi bi-chevron-down "></i>
+
+            </button>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Single</a></li>
+                <li><a class="dropdown-item" href="#">Divorced</a></li>
+            </ul>
+        </div>
+        
+        <!-- Your other form fields here -->
+        <div class="detailbox-container">
+            <input type="text" placeholder="Annual Income" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Family Type" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Family Name" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Father's Name" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Father's Occupation" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Mother's Name" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Mother's Occupation" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Number Of Sibling's" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container plus">
+            <input type="text" placeholder="Number Of Sibling's Married" class="border-0">
+            <i class="bi bi-plus-lg"></i>
+
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Sibling's Name & Details" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Height" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Weight" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Body Type" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Complexion" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container plus">
+            <input type="text" placeholder="Disabilities" class="border-0">
+            <i class="bi bi-plus-lg"></i>
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Religion" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Cast/Community" class="detailbox">
+        </div>
+        
+        <div class="detailbox-container">
+            <input type="text" placeholder="Expectation from Partner" class="detailbox">
+        </div>
+
+        <input type="button" value="Next" class="btn btn-dark">
+    </div>
+
+    {% endblock %}

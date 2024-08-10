@@ -1,0 +1,199 @@
+{% include 'index.html' %}
+{% block content %}
+    <style>
+        body {
+            background-color: rgb(95, 19, 99);
+        }
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .search {
+            background-color: transparent;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 60px;
+            border: 1px solid rgb(204, 115, 187);
+        }
+        .search i {
+            color: white;
+        }
+        .sent {
+            color: white;
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 70px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .second {
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(247, 247, 247);
+            border-radius: 50px;
+            position: fixed;
+            bottom: 0;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+            height: 100%; 
+            background-color: transparent;
+        }
+        .icon-center {
+            margin-top: -20px;
+            font-size: 3rem; /* Adjust size as needed */
+            color: rgb(65, 62, 63); /* Adjust color as needed */
+        }
+        .friends {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .friends .image {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            object-fit: cover;
+            margin-right: 15px;
+            margin-left: 20px;
+        }
+        .friends .name {
+            flex-grow: 1;
+        }
+        .friends h3 {
+            margin: 0;
+            color: rgb(96, 54, 54);
+            margin-left: 20px;
+        }
+        .friends h5 {
+            margin: 0;
+            color: rgb(85, 83, 84);
+            margin-left: 20px;
+        }
+        .friends i {
+            color: rgb(136, 51, 86);
+            cursor: pointer;
+        }
+        .messages {
+            margin-top: 20px;
+        }
+        .images {
+            display: flex;
+            gap: 10px;
+        }
+        .msgimg {
+            width: 105px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 8px;
+            position: relative;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+        .msgimg:hover .overlay {
+            opacity: 2.5;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(230, 156, 156, 0.8); /* Light violet background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 8px;
+        }
+        .overlay .bi-heart-fill {
+            font-size: 2rem;
+            color: white;
+        }
+        .img-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+
+
+
+    <div class="container main">
+        <div class="search">        <i class="bi bi-chevron-left text-white fs-3"></i>
+        </div>
+
+        <h1 class="sent">Messages</h1>
+    </div>
+    <div class="container messages mt-3">
+        <h2 class="text-white fs-4 mb-3 ">Recent Messages</h2>
+        <div class="images">
+            <div class="img-container mx-4 ms-5">
+                <img src="https://via.placeholder.com/60" alt="Message Image" class="msgimg">
+                <div class="overlay">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+            </div>
+            <div class="img-container mx-4">
+                <img src="https://via.placeholder.com/60" alt="Message Image" class="msgimg">
+                <div class="overlay">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+            </div>
+           
+            <div class="img-container mx-4">
+                <img src="https://via.placeholder.com/60" alt="Message Image" class="msgimg">
+                <div class="overlay">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+            </div>
+            <div class="img-container mx-4">
+                <img src="https://via.placeholder.com/60" alt="Message Image" class="msgimg">
+                <div class="overlay">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+            </div>
+            <div class="img-container mx-4">
+                <img src="https://via.placeholder.com/60" alt="Message Image" class="msgimg">
+                <div class="overlay">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid second">
+        <div class="icon-container">
+            <i class="bi bi-dash-lg icon-center mb-5"></i>
+        </div>
+        <h2 class="pb-2">A</h2>
+       
+        <div class="friends">
+            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
+            <div class="name">
+                <h3>Afrin Sabile</h3>
+                <h5>Life is beautiful</h5>
+            </div>
+            <p>03:19</p>
+        </div>
+        <div class="friends">
+            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
+            <div class="name">
+                <h3>Afrin Sabile</h3>
+                <h5>Life is beautiful</h5>
+            </div>
+            <p>03:19</p>
+        </div>
+        <!-- Repeat friends divs as needed -->
+    </div>
+{% endblock %}
