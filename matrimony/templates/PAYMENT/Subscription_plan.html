@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/Subscriptionplan.css' %}">
+</head>
+<body>
+    <div class="d-flex align-items-center justify-content-center full-height">
+        <div class="container mt-5 mb-5" style="text-align: -webkit-center; text-align-last: start;">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Subscription Plan</h1>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Prime Member</h2>
+                    <h3 class="card-text">₹79 per month</h3>
+                    <h4 class="mt-1"><i class="bi bi-check-circle-fill"></i> Daily Limits</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">View up to 15 profiles per day</li>
+                        <li class="list-group-item">Send up to 15 requests per day</li>
+                    </ul>
+                    <h4 class="mt-1"><i class="bi bi-check-circle-fill"></i> Weekly Limits</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">View up to 90 profiles per week</li>
+                        <li class="list-group-item">send up to 90 requests per week</li>
+                    </ul>
+                    <h4 class="mt-1"><i class="bi bi-check-circle-fill"></i> Monthly Limits</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">View up to 300 profiles per week</li>
+                        <li class="list-group-item">send up to 300 requests per week</li>
+                    </ul>
+                    <h4 class="mt-1"><i class="bi bi-check-circle-fill"></i> Premium Features</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Unlock Unlimited Messages</li>
+                        <li class="list-group-item">Unlock Shortlist Page</li>
+                        <li class="list-group-item">View Profiles Who Shortlisted You</li>
+                        <li class="list-group-item">sort & filter Profiles</li>
+                    </ul>
+                    <div class="button" style="text-align-last: center;">
+                    <a href="{% url 'payment_methods' %}" class="btn btn-primary mt-4">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

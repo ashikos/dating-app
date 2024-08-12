@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .payment-method {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: space-between; /*Space out the image and text */
+        }
+        .payment-method:hover {
+            background-color: #f9f9f9;
+        }
+        .default-method {
+            font-weight: bold;
+            color: #6c757d;
+        }
+        .payment-method img {
+            max-width: 50px;
+            margin-right: 15px; /* Space between image and text */
+        }
+        .payment-method .details {            
+            flex: 1; /* Take up the remaining space */
+        }
+        .payment-method .details p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="{% url 'subscription_plan' %}"><i class="bi bi-x-lg" style="font-size: x-large;color: black;"></i></a>
+            <button class="btn btn-light">Done</button>
+        </div>
+        <h2>Payment Methods</h2>
+        <p>Choose the desired payment type. We offer easy ways for payments on our app.</p>
+
+        <div class="payment-method">
+            <img src="{% static 'images/svgicons/mastercard.svg' %}" alt="MasterCard">
+            <div class="details">
+                <!-- <h5>MasterCard</h5> -->
+                <p>********** 4444</p>
+                <p>Expires 09/25</p>
+            </div>
+        </div>
+
+        <div class="payment-method">
+            <img src="{% static 'images/svgicons/visa.svg' %}" alt="MasterCard">
+            <div class="details">
+                <!-- <h5>VisaCard</h5> -->
+                <p>********** 3343</p>
+                <p>Expires 09/25</p>
+            </div>
+        </div>
+
+        <div class="payment-method">
+            <img src="{% static 'images/svgicons/paypal.svg' %}" alt="PayPal">
+            <div class="details">
+                <!-- <h5>PayPal</h5> -->
+                <p>petra-stark@gmail.com</p>
+            </div>
+        </div>
+        <h5 style="text-transform: uppercase;">Current Method</h5>
+
+        <div class="payment-method default-method dropdown-toggle">
+            <img src="{% static 'images/svgicons/dollar.svg' %}" alt="Cash">
+            <div class="details">
+                <h5>Cash payment</h5>
+                <h6>Default method</h6>
+            </div>
+        </div>
+
+        <a href="{% url 'add_payment_methods' %}" class="btn btn-dark btn-block mt-4" style="text-transform: uppercase;">Add Payment Method</a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
