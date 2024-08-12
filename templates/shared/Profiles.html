@@ -1,0 +1,142 @@
+{% load static %}
+{% block extra_css %}
+<style>
+    .custom-image {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        position: relative;
+        border: 5px solid pink;
+        
+    }
+    .profile-card {
+        position: relative;
+        overflow: hidden; /* Ensures content doesn't overflow the image boundary */
+        border-radius: 10px; /* Matches image border radius */
+    }
+    .match-info {
+        position: absolute;
+        top: 0;
+        left: 40px;
+        width: 200px;
+        background: palevioletred;
+        color: #fff;
+        padding: 5px;
+        font-size: 14px;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .profile-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box; /* Includes padding in the element's width and height */
+        text-align-last: center;
+        text-align: -webkit-center;
+    }
+    .profile-details p {
+        margin: 0;
+    }
+    .distance {
+        background-color: rgba(255, 255, 255, 0.8); /* Background color for distance */
+        padding: 2px 5px;
+        border-radius: 5px;
+        width: max-content;
+    }
+    .name-age {
+        font-weight: bold;
+        margin-right: 5px; /* Space between name and age */
+    }
+</style>
+{% endblock extra_css %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-start">
+        <!-- #profile1 -->
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <!-- #profile1 end -->
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-2.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 profile-card">
+            <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
+            <div class="match-info">
+                <strong>100% Match</strong>
+            </div>
+            <div class="profile-details">
+                <p class="distance">1.3 KM away</p>
+                <p class="name-age">John Doe, 25</p>
+                <p>New York</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

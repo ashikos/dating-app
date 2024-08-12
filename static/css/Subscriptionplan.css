@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(to bottom, purple, black);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: max-content;
+    
+}
+
+.card-header h1 {
+    color: white;
+}
+
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: .75rem 2.25rem;
+}
+
+.list-group-item.with-border {
+    border-top: 1px solid white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 50px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}

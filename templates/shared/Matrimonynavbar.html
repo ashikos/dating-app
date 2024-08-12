@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/Matrimonynavbar.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: white;box-shadow:0 0px 10px rgba(0, 0, 0,0.2);">
+
+        <div class="container-fluid">
+            <!-- <span class="navbar-toggler-icon" style="color: #000;"></span> -->
+            <i class="bi bi-list fs-2" style="margin-right: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"></i>
+            <a class="navbar-brand h1 mb-0" href="#">MATRIMONY APP</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                </ul>
+            </div>
+            <i class="bi bi-bell fs-2" style="margin-right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+            <img src="{% static 'images/sampletest/profilepic.jpg' %}" alt="Profile Picture" class="profile-pic" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        </div>
+    </nav>
+    
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasleftLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+                <i class="bi bi-x-circle" style="color: white;"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="flex-grow-1">
+                <div class="list-group text-center">
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#"style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Dating</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#"style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Matrimony</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#"style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">E commerce</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#"style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Study Abroad</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#"style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Job Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of first canvas -->
+    
+    <!-- secondcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <!-- <img src="{% static 'images/profilepic.jpg' %}" alt="Profile Picture" class="profile-pic"> -->
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+                <i class="bi bi-x-circle" style="color: white;"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="card mb-3" style="max-width: 540px; background-color: unset;border: none;">
+                <div class="d-flex align-items-center">
+                  <div class="profile-image-container me-3">
+                    <img src="{% static 'images/sampletest/profilepic.jpg' %}" class="rounded-circle img-fluid" alt="Profile Picture" style="width: 80px; height: 80px;border: 4px solid pink;">
+                  </div>
+                  <div>
+                    <div class="card-body p-0">
+                      <h5 class="card-title mb-1 text-danger">Stone Stellar</h5>
+                      <p class="card-text mb-1 text-warning"><img src="{% static 'images/svgicons/crown.svg' %}" alt="crown"  style="width: 20px; height: 20px;">Prime Member</p>
+                      <p class="card-text mb-0"><small class="text-body-secondary text-success">Online</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+            <div class="flex-grow-1">
+                <div class="list-group text-start">
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Sent Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Viewed My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Accept Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Reject</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Revived</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted By</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Contacted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Message</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Settings</a>
+                </div>
+            </div>
+            <div class="logout mt-2">
+                <div class="list-group text-center"> 
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light text-color-red"  style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='unset'">
+                        <i class="bi bi-box-arrow-in-left icon-spacing" ></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Notifications</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert d-flex align-items-start" role="alert" style="background-color: darkmagenta;">
+                    <div class="flex-grow-1">
+                        <h6 class="alert-heading" style="color: blue;">NEWS</h6>
+                        <h5 class="alert-heading" style="color: white;">News Title</h5>
+                        <p style="color: rgba(255, 255, 255, 0.800);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="margin-left: auto; color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: darkmagenta;">
+                    <i class="bi bi-check2-circle" style="font-size: 24px; color: green; margin-right: 15px;"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Successfully Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: darkmagenta;">
+                    <i class="bi bi-info-circle" style="font-size: 24px; color: yellow; margin-right: 15px;"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Alert Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: darkmagenta;">
+                    <i class="bi bi-x-circle" style="font-size: 24px; color: red; margin-right: 15px;"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Error Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>                
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
