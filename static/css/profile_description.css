@@ -280,7 +280,7 @@ body {
         display: inline-block;
     }
     .profile-header{
-        background-image: url('../img/header.png'); /* Replace with your image path */
+        background-image: url('../images/sample/header.png'); /* Replace with your image path */
         background-size: cover;
         height: 550px;
         position: relative;

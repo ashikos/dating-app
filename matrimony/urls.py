@@ -29,8 +29,8 @@ urlpatterns = [
     path('viewedmyprofile/', viewedmyprofile_view, name='viewedmyprofile'),
     
     
-    path('profiledescription/', ProfileDescription, name='profiledescription'),
-    path('edit_profile/', EditProfile, name='edit_profile'),
+    path('profiledescription/', ProfileDescription.as_view(), name='profiledescription'),
+    path('edit_profile/', EditProfile.as_view(), name='edit_profile'),
 
 ]
 

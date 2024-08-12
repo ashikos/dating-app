@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-$$4(5%wh!ip0o@_+!$tm%(z-yba+zkf3mycy8@kj&#_tacu_wi
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("text/css",".css",True)
 
 ALLOWED_HOSTS = []
 
