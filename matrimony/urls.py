@@ -1,14 +1,10 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
+
 
 urlpatterns = [
-                 
-
-              ]
-
-urlpatterns = [
-    path('', views.TestView, name='test'),
 
     path('home/', HomeView.as_view(), name='home'),
     path('profileslocation/', ProfilesLocationView.as_view(), name='profiles_location'),
@@ -19,7 +15,7 @@ urlpatterns = [
     path('addpaymentmethods/', AddPaymentMethodsView.as_view(), name='add_payment_methods'),
   
   
-    path('', views.TestView, name='test'),
+    path('', TestView, name='test'),
     path('accept/', accept_view, name='accept'),
     path('contacted/', contacted_view, name='contacted'),
     path('extra/', extra_view, name='extra'),
