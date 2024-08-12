@@ -15,41 +15,117 @@
   />
   <!-- bootstrap-icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    {% block extra_css %}
+  {% block styles %}
     <style>
-        .custom-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
+        .icon-large {
+            font-size: xx-large;
+        }
+        .icon-arrow {
+            color: black;
+        }
+        .icon-sliders {
+            color: black;
+        }
+        .header-container {
+            margin-top: 1rem;
+        }
+        .header-title {
+            margin-bottom: 1rem;
+        }
+        .matches-header {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .matches-count {
+            color: deeppink;
+            margin-left: 10px;
+        }
+        .offcanvas-header {
+            padding: 1rem;
+        }
+        .offcanvas-title {
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+        .list-group-item-light {
+            background-color: #f8f9fa;
+            color: black;
+        }
+        .btn-custom {
+            margin-right: 1rem;
+        }
+        .btn-dark-custom {
+            background-color: darkmagenta;
+        }
+
+        /* Media Queries */
+        @media (max-width: 576px) {
+            .icon-large {
+                font-size: large;
+            }
+            .header-title {
+                font-size: 1.5rem;
+            }
+            .matches-header h4 {
+                font-size: 1.25rem;
+            }
+            .matches-count {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 992px) {
+            .icon-large {
+                font-size: x-large;
+            }
+            .header-title {
+                font-size: 1.75rem;
+            }
+            .matches-header h4 {
+                font-size: 1.5rem;
+            }
+            .matches-count {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .icon-large {
+                font-size: xx-large;
+            }
+            .header-title {
+                font-size: 2rem;
+            }
+            .matches-header h4 {
+                font-size: 1.75rem;
+            }
+            .matches-count {
+                font-size: 1.75rem;
+            }
         }
     </style>
-    {% endblock extra_css %}
+    {% endblock styles %}
 </head>
+{% block content %}
 <body>
-    {% block content %}
-    <div class="container mt-3">
+    <div class="container header-container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="{% url 'home' %}"><i class="bi bi-arrow-left-circle" style="font-size:xx-large;color: black;"></i></a>
-            <h4>Location</h4>
-            <i class="bi bi-sliders" style="font-size:xx-large;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"></i>
+            <a href="{% url 'home' %}"><i class="bi bi-arrow-left-circle icon-large icon-arrow"></i></a>
+            <h4 class="header-title">Location</h4>
+            <i class="bi bi-sliders icon-large" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"></i>
         </div>
     </div>
-    <div class="container my-1">
+    <div class="container my-1 matches-header">
         <div class="d-flex justify-content-start align-items-center mb-3">
-            <h4>Your Matches</h4><h4 style="color: palevioletred;margin-left: 10px;">47</h4>
+            <h4>Your Matches</h4><h4 class="matches-count">47</h4>
         </div>
     </div>
-    {% endblock content %}
 
     {% include 'shared/Profiles.html' %}
 
     <!-- Fixed Bottom Bar -->
     {% include 'shared/Footermenu.html' %}
-    
-    
+
     <!-- Offcanvas Component -->
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style="height: max-content;">
         <div class="offcanvas-header">
@@ -59,13 +135,13 @@
         <div class="offcanvas-body small">
             <div class="flex-grow-1">
                 <div class="list-group text-start">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel" style="margin-bottom: 10px; margin-top: 5px;">Sort By</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Sort By</h5>
                     <a class="list-group-item list-group-item-action list-group-item-light">Newest Members</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Last Active</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Distance</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Popularity</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Age</a>
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel" style="margin-bottom: 10px; margin-top: 5px;">Filter By</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Filter By</h5>
                     <a class="list-group-item list-group-item-action list-group-item-light">Gender</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Location</a>
                     <a class="list-group-item list-group-item-action list-group-item-light">Interests/Hobbies</a>
@@ -73,9 +149,9 @@
                     <a class="list-group-item list-group-item-action list-group-item-light">Relationship Goals</a>
                 </div>
             </div>
-            <div class="buttons my-2" style="text-align-last: center;">
-                <button type="button" class="btn btn-danger me-5" data-bs-dismiss="offcanvas" aria-label="Close">Cancel</button>
-                <button type="button" class="btn btn-dark me-5" style="background-color: darkmagenta;">Apply</button>
+            <div class="buttons my-2 text-center">
+                <button type="button" class="btn btn-danger btn-custom" data-bs-dismiss="offcanvas" aria-label="Close">Cancel</button>
+                <button type="button" class="btn btn-dark btn-dark-custom">Apply</button>
             </div>
         </div>
     </div>
@@ -95,9 +171,6 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-
-    {% block scripts %}
-    
-    {% endblock scripts %}
 </body>
+{% endblock content %}
 </html>

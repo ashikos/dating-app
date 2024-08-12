@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
+{% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fixed Bottom Bar</title>
@@ -9,38 +9,129 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{% static 'css/Footermenu.css' %}">
-</head>
-    {% block content %}
-<body>
-    <!-- Your main content here -->
+    {% block styles %}
+    <style>
+      /* Internal CSS */
+      .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 10px 20px 20px 20px;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            z-index: 1000;
+          }
+          
+          .icon-container {
+            background-color: hotpink;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+          }
+          
+          .icon-container:hover {
+            background-color: darkmagenta;
+          }
 
-    <!-- Fixed bottom bar -->
-    <div class="bottom-bar">
+        .icon-container i {
+          color: white;
+          font-size: 20px;
+        }
+        
+        .bottom-bar a {
+          text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .bottom-bar {
+                padding: 5px 0;
+              }
+              
+            .icon-container {
+              width: 35px;
+                height: 35px;
+              }
+              
+              .icon-container i {
+                font-size: 18px;
+              }
+            }
+
+        @media (min-width: 577px) and (max-width: 992px) {
+            .bottom-bar {
+                padding: 8px 0;
+              }
+
+              .icon-container {
+                width: 40px;
+                height: 40px;
+              }
+
+            .icon-container i {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .bottom-bar {
+              padding: 10px 0;
+            }
+            
+            .icon-container {
+              width: 45px;
+                height: 45px;
+              }
+
+              .icon-container i {
+                font-size: 22px;
+              }
+            }
+            </style>
+{% endblock styles %}
+</head>
+{% block content %}
+<body>
+  <!-- Your main content here -->
+  
+  <!-- Fixed bottom bar -->
+  <div class="bottom-bar">
         <a href="#" title="Search">
-            <div class="icon-container" style="background-color:hotpink; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='darkmagenta'" onmouseout="this.style.backgroundColor='hotpink'">
-              <i class="bi bi-search" style="color: white;"></i>
+            <div class="icon-container">
+                <i class="bi bi-search"></i>
             </div>
-          </a>
-          <a href="#" title="Favorites">
-            <div class="icon-container" style="background-color:hotpink; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='darkmagenta'" onmouseout="this.style.backgroundColor='hotpink'">
-              <i class="bi bi-heart" style="color: white;"></i>
+        </a>
+        <a href="#" title="Favorites">
+            <div class="icon-container">
+                <i class="bi bi-heart"></i>
             </div>
-          </a>
-          <a href="{% url 'home' %}" title="Home">
-            <div class="icon-container" style="background-color:hotpink; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='darkmagenta'" onmouseout="this.style.backgroundColor='hotpink'">
-              <i class="bi bi-house-door" style="color: white;"></i>
+        </a>
+        <a href="{% url 'home' %}" title="Home">
+            <div class="icon-container">
+                <i class="bi bi-house-door"></i>
             </div>
-          </a>
-          <a href="#" title="Star">
-            <div class="icon-container" style="background-color:hotpink; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='darkmagenta'" onmouseout="this.style.backgroundColor='hotpink'">
-              <i class="bi bi-star" style="color: white;"></i>
+        </a>
+        <a href="#" title="Star">
+            <div class="icon-container">
+                <i class="bi bi-star"></i>
             </div>
-          </a>
-          <a href="#" title="Messages">
-            <div class="icon-container" style="background-color:hotpink; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='darkmagenta'" onmouseout="this.style.backgroundColor='hotpink'">
-              <i class="bi bi-chat" style="color: white;"></i>
+        </a>
+        <a href="#" title="Messages">
+            <div class="icon-container">
+                <i class="bi bi-chat"></i>
             </div>
-          </a>
+        </a>
     </div>
 
     <!-- Bootstrap JS and dependencies -->

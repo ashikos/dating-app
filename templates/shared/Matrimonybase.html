@@ -19,37 +19,38 @@
       crossorigin="anonymous"
     />
     <!-- bootstrap-icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <!-- animate__animated CSS -->
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-     {% load static %}
-     <!-- favicon.io file -->
-     <link rel="icon" href="{% static 'MatrimonyApp.ico' %}" type="image/x-icon">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    {% load static %}
+    <!-- favicon.io file -->
+    <link
+      rel="icon"
+      href="{% static 'MatrimonyApp.ico' %}"
+      type="image/x-icon"
+    />
     <!-- style.CSS file -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  {% block extra_css %}
-  {% endblock extra_css %}
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block extra_css %}
+    {% endblock extra_css %}
     {% block styles %}
-    
     {% endblock styles %}
   </head>
 
   <body>
     <header>{% include 'shared/Matrimonynavbar.html' %}</header>
-    <main>
-        {% block content %}
-        {% endblock content %}
-    </main>
+    <main>{% block content %} {% endblock content %}</main>
     <footer>
-        
       <!-- place footer here -->
+      {% include 'shared/Footermenu.html' %}
     </footer>
-    {% include 'shared/Footermenu.html' %}
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -63,8 +64,6 @@
       crossorigin="anonymous"
     ></script>
 
-    {% block scripts %}
-    
-    {% endblock scripts %}
+    {% block scripts %} {% endblock scripts %}
   </body>
 </html>
