@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Responsive</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css'%}">
+</head>
+<body>
+    <div class="container">
+        
+        {% include "shared/sidebar.html"%}
+        <div class="topbar">
+            <div class="menu">
+                <img src="{% static 'images/sample/Back.svg'%}" alt="Back">
+            </div>
+            <div class="tag">
+                
+                <p>Edit My Profile</p>
+            </div>
+            
+        </div>
+        <div class="profile-card">
+           
+            <div class="profile-header">
+                <img src="{% static 'images/sample/profilepic.png'%}" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>Nazrul Islam</h3>
+                    <p>Never give up 💪</p>
+                </div>
+            </div>
+            <p class="text-muted">All your account information can be accessed and edited here but your email will remain un-edited.</p>
+            <div class="form-container">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="bio" name="bio" rows="1" placeholder="Bio" required></textarea>
+                    </div>
+                    <div class="section">
+                        <h2>Images</h2>
+                        <div class="items">
+                            <img src="{% static 'images/sample/Shape.png'%}" alt="Profile Image">
+                            <img src="{% static 'images/sample/Shape.png'%}" alt="Profile Image">
+                            <img src="{% static 'images/sample/Shape.png'%}" alt="Profile Image">
+                            <div class="add-button">+</div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Reels</h2>
+                        <div class="items">
+                            <img src="{% static 'images/sample/Shape.png'%}" alt="Reel Image">
+                            <img src="{% static 'images/sample/Shape.png'%}" alt="Reel Image">
+                            <div class="add-button">+</div>
+                        </div>
+                    </div>
+                    <div class="change-password">
+                        <a href="">Change Password</a>
+                    </div>
+            </div>
+            <div class="button-container">
+                <button class="update-button">Update</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -27,6 +27,10 @@ urlpatterns = [
     path('shortlisted/', shortlisted_view, name='shortlisted'),
     path('shortlistedby/', shortlistedby_view, name='shortlistedby'),
     path('viewedmyprofile/', viewedmyprofile_view, name='viewedmyprofile'),
+    
+    
+    path('profiledescription/', ProfileDescription, name='profiledescription'),
+    path('edit_profile/', EditProfile, name='edit_profile'),
 
 ]
 

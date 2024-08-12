@@ -59,4 +59,11 @@ class PaymentMethodsView(TemplateView):
 
 class AddPaymentMethodsView(TemplateView):
     template_name = 'PAYMENT/Add_payment_methods.html'
+    
+class ProfileDescription(TemplateView):
+    template_name = 'TARGETUSER/profile_description.html'
+    
+    
+class EditProfile(TemplateView):
+    template_name = 'USERPROFILE/edit_profile.html'
 
