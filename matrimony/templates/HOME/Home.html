@@ -1,188 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Home</title>
     {% extends 'shared/Matrimonybase.html' %}
     {% load static %}
-    {% block extra_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cards</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    {% block styles %}
     <style>
-        .custom-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
-            position: relative; /* For positioning child elements */
-        }
         .profile-card {
             position: relative;
-            border-radius: 10px; /* Matches image border radius */
-            overflow: hidden; /* Ensures content doesn't overflow the image boundary */
+            border-radius: 20px;
+            overflow: hidden;
+            color: white;
+            text-align: left;
+            width: 100%; /* Full width to adapt to the grid */
+            height: 300px; /* Adjust height as needed */
         }
-        .profile-details {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .profile-card img {
             width: 100%;
-            color: #fff;
-            padding: 10px;
-            box-sizing: border-box; /* Includes padding in the element's width and height */
-            text-align-last: center;
-            text-align: -webkit-center;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
         }
-        .profile-details p {
-            margin: 0;
-            line-height: 1.2;
-        }
-        .distance {
-        background-color: rgba(255, 255, 255, 0.8); /* Background color for distance */
-        padding: 2px 5px;
-        border-radius: 5px;
-        width: max-content;
-        }
-        .name-age {
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            left: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
             font-weight: bold;
-            margin-right: 5px; /* Space between name and age */
         }
-        .online-status {
+        .action-buttons {
             position: absolute;
-            top: 10px;
-            left: 20px;
-            background-color: #00FF00; /* Green color for online status */
-            color: #fff;
-            padding: 2px 8px;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-        .icon-group {
-            position: absolute;
-            right: 30px;
-            top: 10px;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+
+            padding: 10px;
+            border-radius: 50px;
             display: flex;
             flex-direction: column;
+            gap: 10px;
+        }
+        .action-buttons .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
         }
-        .icon-group i {
-            color: #fff;
-            font-size: 20px;
-            margin-bottom: 10px;
+        .action-buttons .btn:hover{
+            background: hotpink;
+            color: white;
         }
-        .btn-group a{
+        .profile-info {
+            position: absolute;
+            bottom: 10px;
+            left: 25px;
+        }
+        .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .profile-info p {
+            margin: 2px 0 0;
+            font-size: 14px;
+            letter-spacing: .25px;
+        }
+        
+        .btn-group-custom {
+            display: flex;
+            border: 5px solid whitesmoke;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .btn-group-custom .btn {
+            border: 2px solid whitesmoke;
+            color: black;
             background-color: hotpink;
-            border: 3px solid white; /* White border color */
-            color: black; /* Default text color */
-            border-radius: 5px; /* Minimal border radius */
-            padding: 10px 20px; /* Size of the button */
-            font-size: 18px; /* Font size */
-            text-align: center;
+            font-size: 16px;
+            text-transform: uppercase;
+            flex: 1;
             transition: background-color 0.3s, color 0.3s;
         }
-    </style>
-    {% endblock extra_css %}
+        .btn-group-custom .btn:hover {
+            background-color: white;
+            color: blue;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .profile-card {
+                width: 100%; /* Full width to adapt to the grid */
+                height: 200px; /* Adjust height as needed */
+            }
+            .status-badge {
+                font-size: 10px;
+            }
+            .action-buttons .btn {
+                font-size: 14px;
+                width: 30px;
+                height: 30px;
+            }
+            .profile-info h2 {
+                font-size: 16px;
+            }
+            .profile-info p {
+                font-size: 10px;
+            }
+            .btn-group-custom .btn {
+                font-size: 14px;
+            }
+            
+        }
+
+        @media (min-width: 577px) and (max-width: 992px) {
+            .profile-card {
+                width: 100%; /* Full width to adapt to the grid */
+                height: 250px; /* Adjust height as needed */
+            }
+            .status-badge {
+                font-size: 12px;
+            }
+            .action-buttons .btn {
+                font-size: 16px;
+                width: 40px;
+                height: 40px;
+            }
+            .profile-info h2 {
+                font-size: 22px;
+            }
+            .profile-info p {
+                font-size: 12px;
+            }
+            .btn-group-custom .btn {
+                font-size: 16px;
+            }
+
+        }
+
+        @media (min-width: 993px) {
+            .profile-card {
+                width: 100%; /* Full width to adapt to the grid */
+                height: 300px; /* Adjust height as needed */
+            }
+            .status-badge {
+                font-size: 14px;
+            }
+            .action-buttons .btn {
+                font-size: 18px;
+                width: 50px;
+                height: 50px;
+            }
+            .profile-info h2 {
+                font-size: 24px;
+            }
+            .profile-info p {
+                font-size: 14px;
+            }
+            .btn-group-custom .btn {
+                font-size: 18px;
+            }
+            
+        }
+        </style>
+{% endblock styles %}
 </head>
+
 {% block content %}
 <body>
-    <div class="d-flex my-3" style="justify-content: center; align-items: center;">
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-            <a class="btn" type="button" for="btnradio1" href="{% url 'profiles_location' %}" onmouseover="this.style.backgroundColor='white'; this.style.color='blue';" onmouseout="this.style.backgroundColor='hotpink'; this.style.color='black';">Location</a>
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <a class="btn" type="button" for="btnradio1" href="{% url 'profiles_designation' %}" onmouseover="this.style.backgroundColor='white'; this.style.color='blue';" onmouseout="this.style.backgroundColor='hotpink'; this.style.color='black';">Designation</a>
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <a class="btn" type="button" for="btnradio1" href="{% url 'profiles_qualification' %}" onmouseover="this.style.backgroundColor='white'; this.style.color='blue';" onmouseout="this.style.backgroundColor='hotpink'; this.style.color='black';">Qualification</a>
-        </div>
-    </div>
+    
     <div class="container mt-5">
-        <div class="row justify-content-start">
-            <!-- #profilehomepage-1 -->
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-            <!-- #profilehomepage-1 end.. -->
-
-            <!-- #dupliacte -->
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-2.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4 profile-card">
-                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Your Image" class="custom-image">
-                <div class="online-status">Online</div>
-                <div class="profile-details">
-                    <p class="name-age">John Doe, 25 Yrs</p>
-                    <p class="jobtitle-location">Developer, New York</p>   
-                </div>
-                <div class="icon-group">
-                    <i class="bi bi-hand-thumbs-up"></i> <!-- Replace with actual icon class -->
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-three-dots"></i>
-                </div>
-            </div>
-
-            <!-- #dupliacte End-->
+        <div class="btn-group-custom">
+            <a href="{% url 'profiles_location' %}" class="btn" type="button">Location</a>
+            <a href="{% url 'profiles_designation' %}" class="btn" type="button">Designation</a>
+            <a href="{% url 'profiles_qualification' %}" class="btn" type="button">Qualification</a>
         </div>
     </div>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Profile Card 1 -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4 profile-card">
+                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Profile Image">
+                <span class="status-badge">Online</span>
+                <div class="action-buttons">
+                    <button class="btn">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-chat"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-three-dots"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2>Sithara Nair</h2>
+                    <p>F26YRS</p>
+                    <p>DEVELOPER, HYDERABAD</p>
+                </div>
+            </div>
+            
+            <!-- Profile Card 2 -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4 profile-card">
+                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Profile Image">
+                <span class="status-badge">Online</span>
+                <div class="action-buttons">
+                    <button class="btn">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-chat"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-three-dots"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2>Jane Smith</h2>
+                    <p>F30YRS</p>
+                    <p>DESIGNER, LOS ANGELES</p>
+                </div>
+            </div>
+
+            <!-- Profile Card 3 -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4 profile-card">
+                <img src="{% static 'images/sampletest/Profiles-1.jpg' %}" alt="Profile Image">
+                <span class="status-badge">Online</span>
+                <div class="action-buttons">
+                    <button class="btn">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-chat"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-three-dots"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2>Alice Johnson</h2>
+                    <p>F28YRS</p>
+                    <p>MANAGER, CHICAGO</p>
+                </div>
+            </div>
+            
+            <!-- Profile Card 4 -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4 profile-card">
+                <img src="{% static 'images/sampletest/Profiles-2.jpg' %}" alt="Profile Image">
+                <span class="status-badge">Online</span>
+                <div class="action-buttons">
+                    <button class="btn">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-chat"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="bi bi-three-dots"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2>Bob Williams</h2>
+                    <p>F32YRS</p>
+                    <p>PHOTOGRAPHER, MIAMI</p>
+                </div>
+            </div>   
+            <!-- Add more profile cards as needed -->  
+        </div>
+    </div>
+    
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 {% endblock content %}
 </html>
