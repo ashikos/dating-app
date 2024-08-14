@@ -60,10 +60,24 @@ class PaymentMethodsView(TemplateView):
 class AddPaymentMethodsView(TemplateView):
     template_name = 'PAYMENT/Add_payment_methods.html'
     
+
+
+
 class ProfileDescription(TemplateView):
     template_name = 'TARGETUSER/profile_description.html'
-    
-    
+      
 class EditProfile(TemplateView):
     template_name = 'USERPROFILE/edit_profile.html'
+    
+class ChangePasswordView(TemplateView):
+    template_name = 'USERPROFILE/change_password.html'
+    
+class SettingsView(TemplateView):
+    template_name = 'USERPROFILE/settings.html'
+    
+class PrivacySettingsView(TemplateView):
+    template_name = 'USERPROFILE/privacy.html'
+    
+class PartnerView(TemplateView):
+    template_name = 'USERPROFILE/partner_preference.html'
 

@@ -4,10 +4,7 @@ body {
     font-family: Arial, sans-serif;
     font-family: "Aldrich", sans-serif;
 }
-/* .menu{
-    /* padding-left: 30px;
-    
-} */
+
 .tag{
     flex-grow: 1;
     text-align: center;
@@ -63,16 +60,7 @@ body {
     box-sizing: border-box;
     font-size: 16px;
 }
-.profile-card button {
-    background-color: #4c106a;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 .images-container {
     display: flex;
     gap: 15px;
@@ -95,39 +83,7 @@ body {
     height: 80px;
     border-radius: 10px;
 }
-.sidebar .back-image {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 40px;
-    height: 40px;
-    background-color: #FAEAF4;;
-}
-.sidebar {
-    background-color: #FAEAF4;
-    position: fixed;
-    height: 100vh;
-    padding-top: 50px;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    width: 21%;
-}
-.sidebar a {
-    display: block;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 18px;
-    color: #4B0082;
-    text-decoration: none;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    background-color: #FAEAF4;
-    transition: background-color 0.3s ease;
-}
-.sidebar a:hover {
-    background-color: #e0d0e4;
-}
+
 .profile-summary {
     text-align: center;
     position: relative;
@@ -196,13 +152,36 @@ body {
     color: rgb(173, 91, 195);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
+    text-decoration: none;
 }
+
+   
 .button-container {
     text-align: center;
     margin-top: 20px;
 }
+.update-button {
+    background-color: #4A154B; /* Replace with the desired color */
+    color: white;
+    border: none;
+    padding: 15px 100px;
+    border-radius: 25px; /* Creates the oval shape */
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    margin-left: 0;
+    width: 100%;
+}
 
+.update-button:hover {
+    background-color: #3a123a; /* Slightly darker shade for hover effect */
+}
+
+.update-button:active {
+    background-color: #290c29; /* Even darker shade for active effect */
+}
 @media (max-width: 992px) {
     body{
         margin: 0;
@@ -268,8 +247,9 @@ body {
         padding-top: 0;
         padding-left: 0;
     }
+    
 }
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     .profile-card {
         padding: 20px;
         margin: 0;
@@ -305,5 +285,6 @@ body {
         font-size: 8px;
     }
     
-    
+     
 }
+    */

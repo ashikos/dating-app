@@ -1,16 +1,156 @@
 {%load static%}
-<link rel="stylesheet" href="{% static 'css/sidebar.css'%}">
+<style>
+    body {
+   
+        color: white;
+        font-family: Arial, sans-serif;
+        font-family: "Aldrich", sans-serif;
+    }
+    .sidebar .back-image {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 40px;
+        height: 40px;
+        background-color: #FAEAF4;;
+    }
+    
+    .sidebar {
+        background-color: #FAEAF4;
+        position: fixed;
+        height: 100vh;
+        padding-top: 50px;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        
+    }
+    .sidebar a {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 18px;
+        color: #4B0082;
+        text-decoration: none;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background-color: #FAEAF4;
+        transition: background-color 0.3s ease;
+    }
+    .sidebar a:hover {
+       
+        background-color: #e0d0e4;
+    }
+    .profile-summary {
+        text-align: center;
+        position: relative;
+    }
+    .profile-summary .back-image {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .back-image img{
+        width: 40px;
+        height: 40px;
+    }
+    .sidebar .back-image {
+        display: block;
+    }
+    
+    .profile-summary .back-image {
+        display: none;
+        top: 20px; /* Adjust as needed */
+        left: 15px; /* Adjust as needed */
+        z-index: 10; 
+    }
+    .profile-summary img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .profile-summary h2 {
+        font-size: 24px;
+        margin: 10px 0;
+        color: black;
+    }
+    
+    .profile-summary p {
+        color: gray;
+        font-size: 16px;
+    }
+    .profile-summary{
+        margin: 40px;
+       
+    }
+    
+    @media (max-width: 992px) {
+        
+        .sidebar {
+         display: none;
+        }
+        .sidebar a {
+            display: inline-block;
+        }
+       
+        .profile-info h1{
+            color: white;
+        }
+        .profile-info p{
+            color: white;
+        }
+        .profile-summary{
+            display: none;
+        }
+        
+        .profile-buttons-wrapper {
+            display: block;
+        }
+        .sidebar .back-image {
+            display: none;
+        }
+    
+        .profile-header .back-image {
+            display: block;
+            position: absolute;
+            top: 20px;  /* Adjust top position */
+            left: 20px; /* Adjust left position */
+            padding: 10px; /* Add padding around the image */
+            z-index: 10; 
+            width: 100%;
+        }
+        .profile-buttons-large{
+            display: none;
+        }
+       
+        .sidebar {
+            display: none;
+        }
+        /* .profile-card {
+            padding: 20px;
+            margin: 0;
+           margin-top: 20px;
+        } */
+        
+       
+    }
+    
+</style>
 <nav class="col-lg-3 col-md-4 sidebar d-none d-md-block">
     <div class="back-image d-none d-lg-block">
-        <a href="#"><img src="{% static 'images/sample/left-arrow.png' %}" alt="Back" class="img-fluid"></a>
+        <a href="#"><img src="{% static 'assets/img/left-arrow.png' %}" alt="Back" class="img-fluid"></a>
     </div>
     <div class="profile-summary">
-        <img src="{% static 'images/sample/header.png' %}" alt="Profile Picture">
+        <img src="{% static 'assets/img/header.png' %}" alt="Profile Picture">
         <h2>Alfredo Calzoni, 30</h2>
         <p>Hamburg, Germany</p>
     </div>
     <a href="#">Home</a>
     <a href="#">Profile</a>
     <a href="#">Messages</a>
-    <a href="#">Settings</a>
+    <a href="{% url 'edit_profile'%}">Edit Profile</a>
+    <a href="{% url 'settings' %}">Settings</a>
+   
 </nav>
