@@ -30,6 +30,7 @@ urlpatterns = [
     
     
     path('profiledescription/', ProfileDescription.as_view(), name='profiledescription'),
+    path('userprofile/', UserProfileView.as_view(), name='userprofile'),
     path('edit_profile/', EditProfile.as_view(), name='edit_profile'),
     path('change_password/',ChangePasswordView.as_view(),name='change_password'),
     path('settings/',SettingsView.as_view(),name='settings'),

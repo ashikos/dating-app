@@ -22,14 +22,16 @@
                 <div class="back-image d-md-none d-flex justify-content-between">
                     <a href="#"><img src="{% static 'images/sample/Back.svg' %}" alt="Back" class="img-fluid"></a>
                     <div class="tag ">
-                        <img src="{% static 'assets/img/icon.png'%}"  alt="tag">
-                        <p>2.5km</p>
+                    
+                        <a href="{% url 'edit_profile'%}">Edit</a>
                     </div>
                 </div>
+                
                 <div class="profile-summary">
                     <img src="{% static 'images/sample/header.png' %}" alt="Profile Picture" class="img-fluid">
                 </div>
                 <div class="profile-info">
+                    
                     <h1>Alfredo Calzoni, 30</h1>
                     <p>Hamburg, Germany</p>
                     <div class="match-percentage">80% Match</div>
