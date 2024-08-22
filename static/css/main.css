@@ -1172,7 +1172,7 @@ margin-right: 5px; /* Reduced margin for less gap */
 }
 .prof-inform {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1194,11 +1194,11 @@ margin-right: 5px; /* Reduced margin for less gap */
 }
 .circle-container {
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1225,7 +1225,7 @@ svg {
 }
 .spin-button-container {
     position: absolute;
-    bottom: 50px;
+    bottom: 89px;
     left: 50%;
     transform: translateX(-50%);
 }
