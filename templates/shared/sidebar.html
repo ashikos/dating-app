@@ -1,0 +1,18 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/sidebar.css'%}">
+<nav class="col-lg-3 col-md-4 sidebar d-none d-md-block">
+    <div class="back-image d-none d-lg-block">
+        <a href="#"><img src="{% static 'images/sample/Back.svg' %}" alt="Back" class="img-fluid"></a>
+    </div>
+    <div class="profile-summary">
+        <img src="{% static 'images/sample/header.png' %}" alt="Profile Picture">
+        <h2>Alfredo Calzoni, 30</h2>
+        <p>Hamburg, Germany</p>
+    </div>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Messages</a>
+    <a href="{% url 'edit_profile'%}">Edit Profile</a>
+    <a href="{% url 'settings' %}">Settings</a>
+   
+</nav>

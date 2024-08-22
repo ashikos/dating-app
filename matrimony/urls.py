@@ -27,6 +27,15 @@ urlpatterns = [
     path('shortlisted/', shortlisted_view, name='shortlisted'),
     path('shortlistedby/', shortlistedby_view, name='shortlistedby'),
     path('viewedmyprofile/', viewedmyprofile_view, name='viewedmyprofile'),
+    
+    
+    path('profiledescription/', ProfileDescription.as_view(), name='profiledescription'),
+    path('userprofile/', UserProfileView.as_view(), name='userprofile'),
+    path('edit_profile/', EditProfile.as_view(), name='edit_profile'),
+    path('change_password/',ChangePasswordView.as_view(),name='change_password'),
+    path('settings/',SettingsView.as_view(),name='settings'),
+    path('privacy/',PrivacySettingsView.as_view(),name='privacy'),
+    path('partner_preferences/',PartnerView.as_view(),name='partner_preferences'),
 
 ]
 

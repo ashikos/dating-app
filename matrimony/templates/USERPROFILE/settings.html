@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+   
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: "Aldrich", sans-serif;
+        
+        }
+        .settings-header {
+            background-color: #4A154B;
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 30px 30px;
+            text-align: center;
+            margin-left:25%;
+        }
+        .settings-header h1 {
+            font-size: 1.5rem;
+        }
+        .settings-header .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .settings-header .status {
+            font-size: 1rem;
+        }
+        .settings-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+        .settings-icon {
+            font-size: 1.5rem;
+            color: #4C156D;
+        }
+        .settings-title {
+            font-size: 1.1rem;
+            margin-left: 15px;
+            font-weight: 400;
+        }
+        .settings-description {
+            font-size: 0.9rem;
+            color: gray;
+            margin-left: 15px;
+        }
+        .list-group{
+            margin-left:25%;
+        }
+        
+        @media (max-width: 992px) {
+            .container-fluid{
+                padding: 0;
+            }
+            .settings-header {
+                margin-left: 0;
+                padding: 15px;
+                border-radius: 0;
+                border-bottom-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+            }
+            
+            .list-group {
+                margin-left: 0;
+            }
+            
+            .settings-title {
+                font-size: 1rem;
+            }
+            
+            .settings-description {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    {% include "shared/sidebar.html"%}
+    <!-- Header Section -->
+    <div class="settings-header">
+        <img src="{% static 'assets/img/profilepic.png'%}" alt="Profile" class="profile-img">
+        <h1>Nazrul Islam</h1>
+        <p class="status">Never give up 💪</p>
+    </div>
+
+    <!-- Settings List -->
+    <div class="list-group mt-4">
+        <a href="{% url "privacy" %}" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/key.png' %}" alt="Account">
+            <div>
+                <div class="settings-title">Account</div>
+                <div class="settings-description">Privacy, security, change number</div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/chat.png' %}" alt="Chat">
+            <div>
+                <div class="settings-title">Chat</div>
+                <div class="settings-description">Chat history, theme, wallpapers</div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/noti.png' %}" alt="Notifications">
+            <div>
+                <div class="settings-title">Notifications</div>
+                <div class="settings-description">Messages, group, and others</div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/doubt.png' %}" alt="Help">
+            <div>
+                <div class="settings-title">Help</div>
+                <div class="settings-description">Help center, contact us, privacy policy</div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/share.png' %}" alt="Storage and data">
+            <div>
+                <div class="settings-title">Storage and data</div>
+                <div class="settings-description">Network usage, storage usage</div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action settings-item d-flex align-items-center">
+            <img src="{% static 'images/settings/friend.png' %}" alt="Invite a friend">
+            <div>
+                <div class="settings-title">Invite a friend</div>
+            </div>
+        </a>
+    </div>
+    {% include 'shared/navbar.html'%}
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

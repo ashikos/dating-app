@@ -1,0 +1,287 @@
+
+body {
+    background-color: #ffffff;
+    color: #fff;
+    font-family: "Aldrich", sans-serif;
+    margin-bottom: 100px;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.container-fluid{
+    padding: 0;
+   
+    margin: 0;
+    width: 100%; 
+}
+.row {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.col-12, .col-md-8, .col-lg-9, .col-lg-3, .col-md-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.profile-header {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-position: center;
+    top: 0;
+    width: 75%;
+    left: 25%;
+    color: white;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+}
+.profile-content {
+    margin-top: 25%; /* Space for fixed header */
+    margin-left: 35%; /* Space for fixed sidebar */
+    padding: 20px;
+    height: calc(100vh - 300px); /* Adjust height to account for fixed elements */
+    overflow-y: auto;
+   
+}
+.profile-summary{
+    margin: 40px;
+   
+}
+.profile-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+    border-radius: 20px;
+}
+.profile-info h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: "Aldrich", sans-serif;
+    color: black;
+}
+.profile-info p{
+    color: black;
+}
+.match-percentage {
+    font-size: 1.5rem;
+    background-color: #7B2E92;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.about p{
+    color: black;
+}
+.interests {
+    display: flex;
+    gap: 10px; /* Space between interest items */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows wrapping to new lines on smaller screens */
+}
+
+.interest-item {
+    background-color: #F9F9F9; /* Light background for the interests */
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #4B0082; /* Text color */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    flex: 0 1 auto; /* Flexibility for responsive design */
+    min-width: 100px; /* Minimum width for each interest item */
+    max-width: 150px; /* Maximum width for each interest item */
+    text-align: center;
+    justify-content: center;
+}
+
+.interest-item span {
+    display: inline-block;
+    white-space: nowrap;
+}
+.contact p{
+    color: #000;
+}
+
+.fixed-bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FAEAF4; /* Background color matching the sidebar */
+    border-top: 1px solid #ddd; /* Optional: border for separation */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for effect */
+    z-index: 1000; /* Ensure it is above other content */
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    padding: 10px 0; /* Padding for space around buttons */
+    border-radius: 40px;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Full width to evenly distribute buttons */
+}
+.profile-buttons-large{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+}
+.profile-buttons-large button{
+    margin: 10px;
+     width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    color: white; /* Ensure text color is readable */
+}
+.profile-buttons button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    color: white; /* Ensure text color is readable */
+}
+
+.btn-dislike {
+    background-color: #F08080;
+}
+
+.btn-star {
+    background-color: #9370DB;
+}
+
+.btn-like {
+    background-color: #FFB6C1;
+}
+
+.btn-info {
+    background-color: #DCDCDC;
+}
+
+.nav-tabs{
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    background-color: #FAEAF4;
+    border: none;
+    color: #4B0082;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: white;
+    color: #4B0082;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #4B0082;
+}
+
+@media (max-width: 992px) {
+    
+    
+    .profile-header{
+        background-image: url('../images/sample/header.png'); /* Replace with your image path */
+        background-size: cover;
+        height: 550px;
+        position: relative;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+       padding-right: 0;
+       
+    }
+    .profile-info h1{
+        color: white;
+    }
+    .profile-info p{
+        color: white;
+    }
+    .profile-summary{
+        display: none;
+    }
+    .interests {
+        justify-content: center; /* Center interests on smaller screens */
+    }
+
+    .interest-item {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        min-width: 90px;
+        max-width: 120px;
+    }
+    .profile-buttons-wrapper {
+        display: block;
+    }
+    .sidebar .back-image {
+        display: none;
+    }
+
+    .profile-header .back-image {
+        display: block;
+        position: absolute;
+        top: 20px;  /* Adjust top position */
+        left: 20px; /* Adjust left position */
+        padding: 10px; /* Add padding around the image */
+        z-index: 10; 
+    }
+    .profile-buttons-large{
+        display: none;
+    }
+    .profile-content {
+        margin-top: 0;
+        margin-left: 0;
+        height: auto;
+    }
+    .tag{
+        display: flex;
+        justify-content: end;
+        padding: 10px 10px;
+        font-size: 16px;
+        color: white;
+        background: linear-gradient(deg, #a39b95, #aba29b);
+        border: 1px solid white;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background 0.3s ease;
+        /* margin-right: 50px; */
+        height: 40px;
+    }
+    .tag a{
+        color: aliceblue;
+        /* padding-top: 15px;
+         */
+         text-decoration: none;
+    
+    }
+    .tag img{
+        width: 10px;
+        height: 10px;
+        padding-bottom: 20px;
+       padding-left: 5px;
+        padding-right: 10px;
+    }
+   
+}
+
+
+@media (min-width: 992px) {
+    .interests {
+        justify-content: flex-start; /* Align interests to the left on larger screens */
+    }
+}
