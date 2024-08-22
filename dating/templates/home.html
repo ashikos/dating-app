@@ -1,0 +1,188 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+
+{% include 'shared/nav_bar.html' %}
+
+{% endblock navbar %}
+  
+
+{% block content %}
+    <div class="container">
+        <!-- Stories Section -->
+        <div class="stories-section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex overflow-auto">
+                        <div class="story-sec me-3">
+                            <div class="story-image" data-bs-toggle="modal" data-bs-target="#storyModal" onclick="showStory('a1.jpg')">
+                                <img src="{% static 'images/a2.jpg' %}" alt="My Story" class="img-fluid">
+                                <button class="add-story-btn" onclick="addStory(event)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <p>My Story</p>
+                        </div>
+                        <div class="story me-3">
+                            <div class="story-image" data-bs-toggle="modal" data-bs-target="#storyModal" onclick="showStory('story1.jpg')">
+                                <img src="story1.jpg" alt="Selena" class="img-fluid">
+                            </div>
+                            <p>Selena</p>
+                        </div>
+                        <div class="story me-3">
+                            <div class="story-image" data-bs-toggle="modal" data-bs-target="#storyModal" onclick="showStory('story2.jpg')">
+                                <img src="story2.jpg" alt="Clara" class="img-fluid">
+                            </div>
+                            <p>Clara</p>
+                        </div>
+                        <!-- Add more stories as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Tabs -->
+        <div class="container mt-4">
+            <div class="custom-tabs-container d-flex justify-content-center">
+                <ul class="nav nav-pills custom-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="location">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="designation">Designation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="education">Education</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Profile Cards -->
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="prof-card" data-location="hyderabad" data-designation="developer" data-qualification="bachelor">
+                    <img src="{% static 'images/a1.jpg' %}" alt="Profile 1">
+                    <div class="gradient-overlay"></div>
+                    <div class="prof-info">
+                        <div class="prof-name">John Doe</div>
+                        <div class="prof-location">Hyderabad</div>
+                    </div>
+                    <div class="online-badge">Online</div>
+                    <div class="action-buttons">
+                        <button><i class="fas fa-heart"></i></button>
+                        <button><i class="fas fa-comment"></i></button>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="prof-card" data-location="bangalore" data-designation="manager" data-qualification="master">
+                    <img src="a2.jpg" alt="Profile 2">
+                    <div class="gradient-overlay"></div>
+                    <div class="prof-info">
+                        <div class="prof-name">Jane Smith</div>
+                        <div class="prof-location">Bangalore</div>
+                    </div>
+                    <div class="online-badge">Online</div>
+                    <div class="action-buttons">
+                        <button><i class="fas fa-heart"></i></button>
+                        <button><i class="fas fa-comment"></i></button>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="prof-card" data-location="hyderabad" data-designation="manager" data-qualification="bachelor">
+                    <img src="a3.jpg" alt="Profile 3">
+                    <div class="gradient-overlay"></div>
+                    <div class="prof-info">
+                        <div class="prof-name">David Lee</div>
+                        <div class="prof-location">Hyderabad</div>
+                    </div>
+                    <div class="online-badge">Online</div>
+                    <div class="action-buttons">
+                        <button><i class="fas fa-heart"></i></button>
+                        <button><i class="fas fa-comment"></i></button>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="prof-card" data-location="bangalore" data-designation="developer" data-qualification="master">
+                    <img src="a4.jpg" alt="Profile 4">
+                    <div class="gradient-overlay"></div>
+                    <div class="prof-info">
+                        <div class="prof-name">Emily Clark</div>
+                        <div class="prof-location">Bangalore</div>
+                    </div>
+                    <div class="online-badge">Online</div>
+                    <div class="action-buttons">
+                        <button><i class="fas fa-heart"></i></button>
+                        <button><i class="fas fa-comment"></i></button>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Stories -->
+    <div class="modal fade" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" id="storyImage" alt="Story">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         function showStory(imageSrc) {
+            document.getElementById('storyImage').src = imageSrc;
+        }
+
+        function addStory(event) {
+            event.stopPropagation();
+            alert('Add Story Clicked');
+        }
+
+        document.querySelectorAll('.custom-tabs .nav-link').forEach(tab => {
+            tab.addEventListener('click', function (event) {
+                event.preventDefault();
+                const filter = this.dataset.filter.toLowerCase();
+                const profileCards = document.querySelectorAll('.prof-card');
+
+                profileCards.forEach(card => {
+                    const cardLocation = card.dataset.location.toLowerCase();
+                    const cardDesignation = card.dataset.designation.toLowerCase();
+                    const cardQualification = card.dataset.qualification.toLowerCase();
+                    let showCard = false;
+
+                    if (filter === 'location') {
+                        showCard = cardLocation === 'hyderabad'; // Example location, replace with dynamic selection
+                    } else if (filter === 'designation') {
+                        showCard = cardDesignation === 'manager'; // Example designation, replace with dynamic selection
+                    } else if (filter === 'education') {
+                        showCard = cardQualification === 'bachelor'; // Example qualification, replace with dynamic selection
+                    }
+
+                    if (showCard) {
+                        card.classList.remove('d-none');
+                    } else {
+                        card.classList.add('d-none');
+                    }
+                });
+
+                // Mark the clicked tab as active
+                document.querySelectorAll('.custom-tabs .nav-link').forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+{% endblock %}

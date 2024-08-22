@@ -1,0 +1,53 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+    <div class="cust-body">
+        <div class="spin-container">
+            <div class="prof-inform">
+                <p>1 km near you</p>
+                <img src="{% static 'images/a1.jpg' %}" alt="Profile Picture" class="prof-pictures">
+                <h2>Sandra - 24</h2>
+                <button class="like-button">Like</button>
+            </div>
+            <div class="circle-container">
+                <!-- SVG Animation -->
+                <svg id="circle-svg" viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:0" />
+                            <stop offset="100%" style="stop-color:rgba(255,255,255,0.5);stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="35" stroke="url(#grad1)" stroke-width="3" fill="none" />
+                    <circle cx="50" cy="50" r="45" stroke="url(#grad1)" stroke-width="3" fill="none" />
+                    <circle cx="50" cy="50" r="55" stroke="url(#grad1)" stroke-width="3" fill="none" />
+                    <circle cx="50" cy="50" r="65" stroke="url(#grad1)" stroke-width="3" fill="none" />
+                </svg>
+            </div>
+            <div class="spin-button-container">
+                <button class="spin-button" onclick="toggleSpin()">
+                    Spin here
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let isSpinning = false;
+        const svgElement = document.querySelector('#circle-svg');
+
+        function toggleSpin() {
+            isSpinning = !isSpinning;
+            if (isSpinning) {
+                svgElement.classList.add('spin-animation');
+            } else {
+                svgElement.classList.remove('spin-animation');
+            }
+        }
+    </script>
+
+
+{% endblock %}

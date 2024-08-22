@@ -1,0 +1,217 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<header class="header-icon">
+    <!-- Left Arrow Button -->
+    <button class="icon-button">
+        <i class="bi bi-arrow-left icon"></i>
+    </button>
+    
+    <span class="title">Discover</span>
+    
+    <!-- Filter Button -->
+    <button class="icon-button">
+        <i class="bi bi-funnel icon"></i>
+    </button>
+</header>
+
+
+<div class="container mb-5">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="profile-card-for-image">
+                    <img src="{% static 'images/a1.jpg' %}" alt="Profile 1">
+                    <span class="new-badge">NEW</span>
+                    <span class="distance-information">16 km away</span>
+                    <div class="profile-information">
+                        <h3>Halima, 19</h3>
+                        <p class="location-information">BERLIN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="profile-card-for-image">
+                    <img src="https://via.placeholder.com/200x300?text=Profile+2" alt="Profile 2">
+                    <span class="new-badge">NEW</span>
+                    <span class="distance-information">20 km away</span>
+                    <div class="profile-information">
+                        <h3>Vanessa, 25</h3>
+                        <p class="location-information">MUNICH</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="profile-card-for-image">
+                    <img src="https://via.placeholder.com/200x300?text=Profile+3" alt="Profile 3">
+                    <span class="new-badge">NEW</span>
+                    <span class="distance-information">5 km away</span>
+                    <div class="profile-information">
+                        <h3>James, 22</h3>
+                        <p class="location-information">HANNOVER</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="profile-card-for-image">
+                    <img src="https://via.placeholder.com/200x300?text=Profile+4" alt="Profile 4">
+                    <span class="new-badge">NEW</span>
+                    <span class="distance-information">30 km away</span>
+                    <div class="profile-information">
+                        <h3>Anna, 29</h3>
+                        <p class="location-information">DRESDEN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- Interest Section -->
+    <div class="interest-section">
+        <h4>Interest</h4>
+        <span class="view-all">View all</span>
+    </div>
+    <div class="interest-list">
+        <span class="badge">Football</span>
+        <span class="badge">Nature</span>
+        <span class="badge">Language</span>
+        <span class="badge">Photography</span>
+        <span class="badge active">Music</span>
+        <span class="badge">Writing</span>
+        <div class="extra-interests">
+            <span class="badge">Travel</span>
+            <span class="badge">Cooking</span>
+            <span class="badge">Reading</span>
+            <span class="badge">Art</span>
+            <!-- Add more hidden interests as needed -->
+        </div>
+    </div>
+
+    <!-- Around Me Section -->
+    <div class="around-me">
+        <h4>Around me</h4>
+        <p>People with <span id="selected-interest">"Music"</span> interest around you</p>
+    </div>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+</div>
+
+<!-- Swiper.js JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Leaflet JS for map -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+// Initialize Swiper
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop: false,
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 10
+        },
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+// Initialize Map
+var map = L.map('map').setView([52.5200, 13.4050], 12); // Set the map's center and zoom level
+
+// Add a tile layer (Mapbox, OpenStreetMap, etc.)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+// Sample data for interests and locations
+const locations = {
+    'Football': [
+        { lat: 52.5200, lng: 13.4050, name: 'Football Club A' },
+        { lat: 52.5300, lng: 13.3950, name: 'Football Club B' }
+    ],
+    'Nature': [
+        { lat: 52.5100, lng: 13.4250, name: 'Nature Park A' },
+        { lat: 52.5400, lng: 13.3850, name: 'Nature Park B' }
+    ],
+    'Music': [
+        { lat: 52.5150, lng: 13.4000, name: 'Music Venue A' },
+        { lat: 52.5250, lng: 13.3900, name: 'Music Venue B' }
+    ]
+    // Add more interests and locations as needed
+};
+
+// Handle interest badge click
+const badges = document.querySelectorAll('.interest-list .badge');
+badges.forEach(badge => {
+    badge.addEventListener('click', function () {
+        badges.forEach(b => b.classList.remove('active'));
+        badge.classList.add('active');
+
+        // Update the selected interest text
+        const interest = badge.textContent;
+        document.getElementById('selected-interest').textContent = `"${interest}"`;
+
+        // Update the map with locations related to the selected interest
+        updateMap(locations[interest]);
+    });
+});
+
+// Show extra interests when 'View all' is clicked
+document.querySelector('.view-all').addEventListener('click', function () {
+    const extraInterests = document.querySelector('.extra-interests');
+    if (extraInterests.style.display === 'block') {
+        extraInterests.style.display = 'none';
+        this.textContent = 'View all';
+    } else {
+        extraInterests.style.display = 'block';
+        this.textContent = 'View less';
+    }
+});
+
+// Function to update map markers based on selected interest
+function updateMap(locations) {
+    map.eachLayer(layer => {
+        if (layer instanceof L.Marker) {
+            map.removeLayer(layer);
+        }
+    });
+
+    locations.forEach(loc => {
+        L.marker([loc.lat, loc.lng]).addTo(map).bindPopup(loc.name);
+    });
+}
+
+// Initially load map with default interest
+updateMap(locations['Music']);
+</script>
+
+
+{% endblock %}
