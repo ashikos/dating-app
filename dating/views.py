@@ -19,5 +19,5 @@ class ProfileView(TemplateView):
     template_name = 'user_profile.html'
 
 
-class UpgradStoryView(TemplateView):
-    template_name = 'upgrade.html'
+class UpgradeStoryView(TemplateView):
+    template_name = 'upgrade_view_story'

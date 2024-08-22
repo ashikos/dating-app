@@ -8,7 +8,7 @@ urlpatterns = [
     path('story/', views.StoryPageView.as_view(), name='story'),
     path('profile/', views.ProfileView.as_view(), name='profile'),
     path('change_password/', views.ChangePasswordView.as_view(), name='change_password'),
-    path('upgrade/',views.UpgradStoryView.as_view(),name="upgrade")
+    path('upgrade/',views.UpgradeStoryView.as_view(),name="upgrade")
 ]
 
 
