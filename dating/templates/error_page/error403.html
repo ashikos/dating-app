@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100 error-body">
+    <div id="error-403" class="error-page active text-center">
+        <h1 class="error-h1">403</h1>
+        <p class="error-p">Access Denied</p>
+        <p class="error-p">Sorry, You don't have access to this page</p>
+        <a href="#" onclick="window.history.back();" class="btn btn-outline-light">Go back to the Previous page</a>
+    </div>
+</div>
+
+{% endblock %}

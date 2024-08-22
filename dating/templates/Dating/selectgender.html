@@ -1,0 +1,33 @@
+
+{% extends 'shared/account_base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+
+<div class="container interested-in-container">
+    <div class="interested-in-buttons">
+        <h2>Interested in</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <button type="submit" name="interested_in" value="Male" class="btn btn-men btn-lg">Men</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" name="interested_in" value="Female" class="btn btn-women btn-lg">Women</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" name="interested_in" value="Both" class="btn btn-both btn-lg">Both</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
