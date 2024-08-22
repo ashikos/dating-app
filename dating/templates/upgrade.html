@@ -1,0 +1,122 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block meta %}
+<title>Story View</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="row d-flex justify-content-center ">
+    <div class="col-12 col-md-10 col-lg-8 ">
+        <div class="story-container">
+            <div class="story-header">
+                <i class="fas fa-arrow-left back-button"></i>
+                <img src="https://cubanvr.com/wp-content/uploads/2023/07/ai-image-generators.webp" alt="Profile Picture">
+                <div class="header-content">
+                    <div>
+                        <h5 class="m-0">Stone Stellar</h5>
+                        <p class="m-0">Online</p>
+                    </div>
+                    <div class="online-status"></div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <span id="progress"></span>
+            </div>
+            <div class="story-image-container" id="storyImageContainer">
+                <img src="https://img.freepik.com/premium-photo/nature-wallpaper-beautiful-nature-wallpaper-4k-nature-wallpapers-hd-nature-wallpaper-green-nature_722194-205.jpg?w=2000" alt="Story Image" class="story-image" id="storyImage">
+                <div class="text-overlay" id="textOverlay">Your Text Here</div>
+                <div class="story-controls">
+                    <p id="storyTime">00:00</p>
+                    <i class="fas fa-volume-up" id="volumeControl"></i>
+                </div>
+            </div>
+            <div class="story-comment-section">
+                <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+                <button id="commentButton">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="story-wrapper">
+<!-- Modal -->
+<div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content upgrade-card">
+            <p class="upgrade-text">Upgrade to view</p>
+            <div class="btn-container">
+                <button class="btn-upgrade" id="upgradeBtn">Upgrade</button>
+                <a href="home.html" class="btn-home">Go to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    const images = [
+        "https://img.freepik.com/premium-photo/nature-wallpaper-beautiful-nature-wallpaper-4k-nature-wallpapers-hd-nature-wallpaper-green-nature_722194-205.jpg?w=2000",
+        "https://thewowstyle.com/wp-content/uploads/2015/01/nature-images-6.jpg",
+        "https://img.freepik.com/premium-photo/nature-wallpaper-beautiful-nature-wallpaper-4k-nature-wallpapers-hd-nature-wallpaper-green-nature_722194-205.jpg?w=2000"
+    ];
+
+    let currentIndex = 0;
+
+    const storyImage = document.getElementById('storyImage');
+    const progress = document.getElementById('progress');
+    const totalImages = images.length;
+
+    function updateImage() {
+        storyImage.src = images[currentIndex];
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const progressPercentage = ((currentIndex + 1) / totalImages) * 100;
+        progress.style.width = `${progressPercentage}%`;
+    }
+
+    document.getElementById('storyImageContainer').addEventListener('click', (e) => {
+        const containerWidth = e.currentTarget.offsetWidth;
+        const clickX = e.clientX - e.currentTarget.getBoundingClientRect().left;
+
+        if (clickX < containerWidth / 2) {
+            // Clicked on the left side
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        } else {
+            // Clicked on the right side
+            currentIndex = (currentIndex + 1) % totalImages;
+        }
+        updateImage();
+    });
+
+    document.getElementById('commentButton').addEventListener('click', () => {
+        const commentInput = document.getElementById('commentInput');
+        const comment = commentInput.value.trim();
+        if (comment) {
+            alert(`Comment posted: ${comment}`);
+            commentInput.value = ''; // Clear the input after posting
+        }
+    });
+    window.onload = function () {
+        const myModal = new bootstrap.Modal(document.getElementById('popupModal'));
+        myModal.show();
+    };
+
+    document.getElementById("upgradeBtn").addEventListener("click", function () {
+        document.body.classList.remove('blurred-story-image');
+        document.body.classList.add('unblurred-story-image');
+        const myModalEl = document.getElementById('popupModal');
+        const modalInstance = bootstrap.Modal.getInstance(myModalEl);
+        modalInstance.hide();
+    });
+
+    updateImage();// Initial call to set the first image
+</script>
+{% endblock scripts %}

@@ -20,7 +20,8 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dating', include('dating.urls')),
+    # path('dating', include('dating.urls')),
+    path('', include('dating.urls')),
     path('job', include('jobPortal.urls')),
     path('matrimony', include('matrimony.urls')),
 ]
