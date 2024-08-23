@@ -1,0 +1,40 @@
+{%extends 'adminpanel.html'%}
+
+{%block admin%}
+<form action="">
+
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Products</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"><a href="add_product" class="btn" style="text-decoration: none;">add product +</a></th>
+          </tr>
+          <tr>
+            <th scope="col">NAME</th>
+            <th scope="col"></th>
+            <th scope="col">PRICE</th>
+            <th>Category</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {%for product in products%}
+            <tr>
+            <td>{{product.name}}</td>
+            <td></td>
+            <td>{{product.price}}</td>
+            <td>{{product.Category}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+      </table>
+
+
+
+
+
+
+</form>
+{%endblock%}

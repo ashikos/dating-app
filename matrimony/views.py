@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+
 # Create your views here.
 
 def TestView(request):
-    return render(request, 'index.html')
+    return render(request, 'layouts/Matrimonybase.html')
 
 def accept_view(request):
     return render(request, 'accept.html')

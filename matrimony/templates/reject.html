@@ -6,9 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    {% extends 'layouts/Matrimonybase.html' %}
+    {% load static %}
+    {% block extra_css %}
+    
+    
     <style>
         body {
-            background-color: rgb(95, 19, 99);
+            background-color: rgb(95, 19, 99) !important;
         }
         .search {
             background-color: rgb(204, 115, 187);
@@ -127,7 +133,12 @@
             font-size: 1.5rem;
         }
     </style>
+
+    {% endblock extra_css %}
+    
 </head>
+{% block content %}
+    
 <body>
     <div class="container main">
         <div class="search"><i class="bi bi-search fs-1"></i></div>
@@ -184,4 +195,5 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
+{% endblock content %}
 </html>

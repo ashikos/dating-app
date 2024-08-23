@@ -15,7 +15,7 @@ urlpatterns = [
     path('addpaymentmethods/', AddPaymentMethodsView.as_view(), name='add_payment_methods'),
   
   
-    path('', TestView, name='test'),
+    path('test/', TestView, name='test'),
     path('accept/', accept_view, name='accept'),
     path('contacted/', contacted_view, name='contacted'),
     path('extra/', extra_view, name='extra'),

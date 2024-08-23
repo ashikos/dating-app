@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <!-- <span class="navbar-toggler-icon" style="color: #000;"></span> -->
             <i class="bi bi-list fs-2" style="margin-right: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"></i>
-            <a class="navbar-brand h1 mb-0" href="#">MATRIMONY APP</a>
+            <a class="navbar-brand h1 mb-0" href="{% url 'home' %}">MATRIMONY APP</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -88,17 +88,17 @@
               
             <div class="flex-grow-1">
                 <div class="list-group text-start">
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">My Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Sent Request</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Viewed My Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Accept Request</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Reject</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Revived</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted By</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Contacted</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Message</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Settings</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'home' %}" >My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'sent' %}" >Sent Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'accept' %}" >Viewed My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'accept' %}" >Accept Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'reject' %}" >Reject</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'received' %}" >Recvived</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'shortlistedby' %}" >Shortlisted By</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'shortlist' %}" >Shortlisted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'contacted' %}" >Contacted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'messages' %}" >Message</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light"  href="{% url 'accept' %}" >Settings</a>
                 </div>
             </div>
             <div class="logout mt-2">

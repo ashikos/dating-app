@@ -37,19 +37,32 @@
     {% block styles %}
     
     {% endblock styles %}
+    <style>
+      html body{
+          height: 100%;
+          margin: 0;
+      }
+      main {
+          height: 100%;
+      }
+  </style>
   </head>
 
   <body>
-    <header>{% include 'shared/Matrimonynavbar.html' %}</header>
-    <main>
+    <header>{% include 'layouts/Matrimonynavbar.html' %}</header>
+    <main  style=" max-height: 92%;padding-bottom: 50px;overflow-y: scroll;">
         {% block content %}
+        
         {% endblock content %}
+        
     </main>
     <footer>
         
       <!-- place footer here -->
+      {% include 'layouts/Footermenu.html' %}
+      
     </footer>
-    {% include 'shared/Footermenu.html' %}
+    
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
