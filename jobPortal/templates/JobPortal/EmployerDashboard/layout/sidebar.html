@@ -1,0 +1,51 @@
+<div class="sidebar-backdrop"></div>
+
+    <!-- User Sidebar -->
+    <div class="user-sidebar" >
+
+      <div class="sidebar-inner">
+        <ul class="navigation">
+          <li class="active"><a href="dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
+          <li><a href="dashboard-company-profile.html"><i class="la la-user-tie"></i>Company Profile</a></li>
+          <li><a href="dashboard-post-job.html"><i class="la la-paper-plane"></i>Post a New Job</a></li>
+          <li><a href="dashboard-manage-job.html"><i class="la la-briefcase"></i> Manage Jobs </a></li>
+          <li><a href="dashboard-applicants.html"><i class="la la-file-invoice"></i> All Applicants</a></li>
+          <li><a href="dashboard-resumes.html"><i class="la la-bookmark-o"></i>Shortlisted Resumes</a></li>
+          <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
+          <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
+          <li><a href="dashboard-resume-alerts.html"><i class="la la-bell"></i>Resume Alerts</a></li>
+          <li><a href="dashboard-change-password.html"><i class="la la-lock"></i>Change Password</a></li>
+          <li><a href="dashboard-company-profile.html"><i class="la la-user-alt"></i>View Profile</a></li>
+          <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
+          <li><a href="index.html"><i class="la la-trash"></i>Delete Profile</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+        #toggle-user-sidebar {
+      position: fixed; /* Fixes the button in the viewport */
+      bottom: 20px; /* Distance from the bottom of the viewport */
+      right: 20px; /* Distance from the right of the viewport */
+      background-color: #2279d6; /* Button background color */
+      border: none; /* Remove default border */
+      color: white; /* Text color */
+      padding: 10px 20px; /* Padding inside the button */
+      border-radius: 50%; /* Rounded button */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 24px; /* Font size for the icon */
+      transition: background-color 0.3s ease; /* Smooth background color transition */
+      z-index: 1000; /* Ensure the button is above other content */
+    }
+    
+        #toggle-user-sidebar:hover {
+          background-color: #0056b3; /* Darker background color on hover */
+        }
+    
+        .flaticon-menu-1 {
+          font-size: 20px; /* Size of the icon */
+        }
+      </style>
+      <button id="toggle-user-sidebar">
+        <span class="flaticon-menu-1"></span>
+      </button>
