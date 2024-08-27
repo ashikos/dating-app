@@ -1,190 +1,908 @@
-<!DOCTYPE html>
+
+{% extends 'shared/Main.html'%}
+
+{% load static %}
+
+
+      {% block extra_css %}
+      <link rel="stylesheet" href="{% static 'css/menupage.css' %}">
+       {% endblock extra_css %}
+
+
+{% block content%}
+<main>
+
+    <div class="main-container">
+        <div class="top-navbar">
+            <h1 class="settings-text">Shortlist</h1>
+        </div>
+        <div class="main-content">
+            <div class="list-group">
+                <div class="alphabet-header">A</div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">Afrin Sabila</div>
+                            <div class="status">Life is beautiful 👌</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">Adil Adnan</div>
+                            <div class="status">Be your own hero 💪</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="alphabet-header">B</div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">Bristy Haque</div>
+                            <div class="status">Keep working ✍️</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">John Borino</div>
+                            <div class="status">Make yourself proud 😁</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">Borsha Akther</div>
+                            <div class="status">Flowers are beautiful 🌸</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="alphabet-header">S</div>
+                <div class="list-group-item">
+                    <div class="item-content">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                        <div class="name-status">
+                            <div class="name">Sheik Sadi</div>
+                            <div class="status">Life is beautiful 👌</div>
+                        </div>
+                    </div>
+                    <div class="action-icons">
+                        <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                        <button class="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock content%}
+
+
+
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: rgb(95, 19, 99);
+        .main-container {
+            max-width: 950px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: transparent;
         }
-        .search {
-            background-color: rgb(204, 115, 187);
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            text-align: center;
-            line-height: 60px;
-        }
-        .search i {
+        .top-navbar {
+            background-color: #3e152f; /* Set your desired color here */
             color: white;
-        }
-        .main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .sent {
-            color: white;
-            flex-grow: 1;
+            padding: 20px 0;
             text-align: center;
-            margin-right: 70px;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            position: relative;
         }
-        .second {
-            width: 100%;
-            padding: 20px;
-            background-color: rgb(247, 247, 247);
-            border-radius: 50px;
-            position: fixed;
-            bottom: 0;
+        .top-navbar .settings-text {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
         }
-        .icon-container {
+        /* .profile-info {
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 100%; 
-            height: 100%; 
-            background-color:transparent;
-        
         }
-        .icon-center {
-            margin-top: -20px;
-            font-size: 3rem; /* Adjust size as needed */
-            color: rgb(65, 62, 63); /* Adjust color as needed */
-        }
-        .friends {
+        .profile-section {
+            background-color: white;
+            padding: 20px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            margin-bottom: 10px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
-        .friends .image {
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            object-fit: cover;
+        .profile-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             margin-right: 15px;
-            margin-left: 20px;
         }
-        .friends .name {
-            flex-grow: 1;
-        }
-        .friends h3 {
+        .profile-section h2 {
             margin: 0;
-            color: rgb(96, 54, 54);
-            margin-left: 20px;
+            font-size: 18px;
         }
-        .friends h5 {
+        .profile-section p {
             margin: 0;
-            color: rgb(85, 83, 84);
-            margin-left: 20px;
-
-        }
-        .friends i {
-            color: rgb(136, 51, 86);
-            cursor: pointer;
-        }
-        .belownavbar{
-            display: flex;
+            font-size: 12px;
+            color: #7a3636;
+        } */
+        .main-content {
+            padding: 20px;
+            border-radius: 20px;
             background-color: white;
-            border-radius: 30px;
-
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .belownavbar {
+        .list-group-item {
+            border-left: none;
+            border-right: none;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 10px;
-            border: 1px solid #e9ecef;
-            border-radius: 60px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 1300px; /* Adjust the width as needed */
-            width: 100%;
-            
+            padding: 15px;
         }
-        .search {
+        .list-group-item .item-content {
             display: flex;
-            justify-content: center;
             align-items: center;
+        }
+        .list-group-item .item-content img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .list-group-item .item-content .name-status {
+            display: flex;
+            flex-direction: column;
+        }
+        .list-group-item .item-content .name-status .name {
+            font-weight: bold;
+        }
+        .list-group-item .item-content .name-status .status {
+            font-size: 12px;
+            color: #efe5e5;
+        }
+        .list-group-item .action-icons {
+            display: flex;
+            align-items: center;
+        }
+        .list-group-item .action-icons .remove-btn, 
+        .list-group-item .action-icons .heart-btn {
+            background-color: transparent;
+            border: none;
+            color: #505050;
             cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
         }
-       
-      
-        .fs-1 {
-            font-size: 1.5rem;
+        .alphabet-header {
+            padding: 5px 15px;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
         }
+        /* navbar css  */ 
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #6c0571;
+        /* background-color: #4B164C; */
+        }
+        .top-navbar {
+        background-color:transparent; 
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+        font-size: 18px;
+        font-weight: bold;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        }
+      /* .profile-section {
+        background-color: white;
+        margin: -30px auto;
+        width: calc(100%);
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .profile-info {
+        display: flex;
+        align-items: center;
+      }
+      .profile-section img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      .profile-section h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .profile-section p {
+        margin: 0;
+        font-size: 12px;
+        color: #777;
+      } */
+      /* .main-content {
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      } */
+
+      .list-group-item {
+        border-left: none;
+        border-right: none;
+        display: flex;
+        align-items: flex-start;
+        padding: 15px;
+        padding-bottom: 15px;
+      }
+      .list-group-item i {
+        margin-right: 15px;
+        font-size: 20px;
+      }
+      .list-group-item span {
+        display: flex;
+        flex-direction: column;
+      }
+      .list-group-item .item-content .subheading {
+        font-size: 12px;
+        color: #070707;
+      }
+
+      /* Footer menu styles */
+      .bottom-bar {
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
+        /* padding: 10px 0; */
+        z-index: 1000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px 20px 0 0;
+      }
+      .icon-container {
+        text-align: center;
+      }
+      .icon-container i {
+        color: #5a2d82;
+        font-size: 24px;
+      }
+      .icon-container h5 {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #5a2d82;
+      }
+
+      /* PC View: Left Sidebar */
+      @media (min-width: 768px) {
+         .bottom-bar {
+          flex-direction: column;
+          width: 80px;
+          /* changed here 20% */
+          height: calc(100vh - 20%);
+          /* new top 80% */
+          top: 80px;
+          bottom: auto;
+          border-radius: 20px;
+        }
+        .icon-container h5 {
+          display: none;
+        }
+      }
+
+      /* Mobile View: Bottom Navbar */
+      @media (max-width: 767px) {
+        .bottom-bar {
+          flex-direction: row;
+          height: 80px;
+        }
+        .main-content {
+          padding-bottom: 60px; /* Add padding to accommodate the bottom navbar */
+        }
+      }
+
+
+
+
+/* Modal Styling */
+.modal-dialog {
+    max-width: 80vw; /* Adjust width of the modal */
+}
+
+.modal-body {
+    padding: 0; /* Remove padding from the modal body */
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* top-navbar */
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-brand {
+    color: black;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #333; 
+}
+
+.offcanvas {
+    background-color: #4B164C;
+    color: white; /* Text color for offcanvas */
+}
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.close-btn {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #fff;
+    margin-left: auto; /* Pushes the close button to the right */
+    cursor: pointer;
+}
+
+.offcanvas-body {
+    padding: 1rem;
+}
+
+.list-group-item {
+    border-radius: 0;
+}
+
+.list-group-item:hover {
+    background-color: #ffffff; /* Light background on hover */
+}
+
+.text-color-red {
+    color: red;
+}
+
+.icon-spacing {
+    margin-right: 10px; /* Adjust the value as needed for the desired space */
+}
+
+.bi .bi-list {
+    font-size: large;
+    margin-right: auto;
+    margin-left: 10px;
+}
+.alert-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.alert-icon-success {
+    color: green;
+}
+
+.alert-icon-info {
+    color: yellow;
+}
+
+.alert-icon-error {
+    color: red;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        order: 1; /* Moves the text to the left */
+        margin-left: 0;
+    }
+
+    .navbar-toggler {
+        order: 0; /* Keeps the toggle button in its place */
+    }
+
+    .profile-pic {
+        order: 3; /* Moves profile pic to the right */
+        margin-left: 0; /* Remove margin */
+    }
+
+    .bi-bell {
+        order: 2; /* Moves bell icon to the right */
+        margin-left: auto; /* Aligns to the right */
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        flex: 1;
+        text-align: left;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bi {
+        font-size: large;
+    }
+    .Logo {
+        width: 0px;
+        height: 0px;
+    }
+    .flex-grow-1 h5,h6,p{
+        font-size: small;
+    }
+    .alert-icon {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .profile-pic {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .offcanvas-body .list-group-item {
+        font-size: 0.9rem;
+    }
+
+    .fixed-bottom-nav .nav-link {
+        font-size: 19px;
+    }
+
+    .Logo {
+        width: 0px;
+        height: 0px;
+    }
+
+    .bi {
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .alert-icon {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+}
+
+@media (min-width: 993px) {
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .offcanvas-body .list-group-item {
+        font-size: 1rem;
+    }
+
+    .fixed-bottom-nav .nav-link {
+        font-size: 20px;
+    }
+
+    .bi {
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .alert-icon {
+        font-size: 24px;
+        margin-right: 15px;
+    }
+    /* .Logo {
+        width: 0px;
+        height: 0px;
+    } */
+}
     </style>
-</head>
-<body>
-    <div class="container main">
-        <div class="search"><i class="bi bi-search fs-1"></i></div>
-        <h1 class="sent">shortlist</h1>
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+           <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="box-shadow:0 0px 10px rgba(0, 0, 0,0.2);">
+        <div class="container-fluid">
+            <i class="bi bi-list fs-2" style="margin-right: 10px;font-size: xx-large;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"></i>
+            <img src="LOGO.png" alt="Logo" class="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand h1 mb-0" href="#">Matrimony</a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                </ul>
+            </div>
+
+            <i class="bi bi-bell fs-2" style="margin-right: 10px;font-size: xx-large;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+            <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" alt="Profile Picture" class="profile-pic" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        </div>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasleftLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-x-circle" style="color: white;font-size: x-large;"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="flex-grow-1">
+                <div class="list-group text-center">
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Dating</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Matrimony</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">E commerce</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Study Abroad</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Job Portal</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid second">
-        <div class="icon-container">
-            <i class="bi bi-dash-lg icon-center mb-5"></i>
-        </div>        <h2 class="pb-2 ">A</h2>
-        <div class="friends">
-            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
-            <div class="name">
-                <h3>Afrin Sabile</h3>
-                <h5>Life is beautiful</h5>
-            </div>
-            <i class="bi bi-heart fs-3 me-5"></i>
-            <i class="bi bi-x-lg fs-4 me-2"></i>
-        </div>
-        <div class="friends">
-            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
-            <div class="name">
-                <h3>Afrin Sabile</h3>
-                <h5>Life is beautiful</h5>
-            </div>
-            <i class="bi bi-heart fs-3 me-5"></i>
-            <i class="bi bi-x-lg fs-4 me-2"></i>
-        </div>
-        <div class="friends">
-            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
-            <div class="name">
-                <h3>Afrin Sabile</h3>
-                <h5>Life is beautiful</h5>
-            </div>
-            <i class="bi bi-heart fs-3 me-5"></i>
-            <i class="bi bi-x-lg fs-4 me-2"></i>
-        </div>
-        <div class="friends">
-            <img src="https://via.placeholder.com/60" alt="Profile Image" class="image">
-            <div class="name">
-                <h3>Afrin Sabile</h3>
-                <h5>Life is beautiful</h5>
-            </div>
-            <i class="bi bi-heart fs-3 me-5"></i>
-            <i class="bi bi-x-lg fs-4 me-2"></i>
-        </div>
+    <!-- end of first canvas -->
 
-        <div class="container belownavbar">
-            <div class="search"><i class="bi bi-search fs-1"></i></div>
-            <div class="search"><i class="bi bi-heart-fill fs-1"></i></div>
-            <div class="search"><i class="bi bi-house-door-fill fs-1"></i></div>
-            <div class="search"><i class="bi bi-star fs-1"></i></div>
-            <div class="search"><i class="bi bi-chat-fill fs-1"></i></div>
-
-
-
+    <!-- secondcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+                <i class="bi bi-x-circle" style="color: white;font-size: x-large;"></i>
+            </button>
         </div>
-       
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="card mb-3" style="max-width: 540px; background-color: unset;border: none;">
+                <div class="d-flex align-items-center">
+                  <div class="profile-image-container me-3">
+                    <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" class="rounded-circle img-fluid" alt="Profile Picture" style="width: 80px; height: 80px;border: 4px solid pink;">
+                  </div>
+                  <div>
+                    <div class="card-body p-0">
+                      <h5 class="card-title mb-1 text-danger">Stone Stellar</h5>
+                      <p class="card-text mb-1 text-warning"><img src="crown.svg" alt="crown"  style="width: 20px; height: 20px;">Prime Member</p>
+                      <p class="card-text mb-0 text-success">online</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+            <div class="flex-grow-1">
+                <div class="list-group text-start">
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'sent' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Sent Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'viewedmyprofile' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Viewed My Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'accept' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Accept Request</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'reject' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Reject</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'received' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Revived</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'shortlistedby' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted By</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'shortlist' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'contacted' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Contacted</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'messages' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Message</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Settings</a>
+                </div>
+            </div>
+            <div class="logout mt-2">
+                <div class="list-group text-center"> 
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light text-color-red"  style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='unset'">
+                        <i class="bi bi-box-arrow-in-left icon-spacing" ></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
-</html>
+
+    <!-- Notification modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content mt-5" style="background-color: unset; color: white; border: none;">
+            <div class="modal-body">
+                <div class="alert d-flex align-items-start" role="alert" style="background-color: #4B164C;">
+                    <div class="flex-grow-1">
+                        <h6 class="alert-heading" style="color: blue;">NEWS</h6>
+                        <h5 class="alert-heading" style="color: white;">News Title</h5>
+                        <p style="color: rgba(255, 255, 255, 0.800);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="margin-left: auto; color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: #4B164C;">
+                    <i class="bi bi-check2-circle alert-icon alert-icon-success"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Successfully Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: #4B164C;">
+                    <i class="bi bi-info-circle alert-icon alert-icon-info"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Alert Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="alert d-flex align-items-center" role="alert" style="background-color: #4B164C;">
+                    <i class="bi bi-x-circle alert-icon alert-icon-error"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading" style="color: white;">Error Message</h5>
+                        <p class="mb-0" style="font-weight: 500; color: rgba(255, 255, 255, 0.800);">Today 10:30 PM</p>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" style="color: white;"></button>
+                </div>           
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </header>
+    <main>
+
+        <nav class="col-md-1 left-sidebar d-none d-md-block">
+            <!--  side Menu for PC View -->
+            <div class="bottom-bar">
+                <a href="#" title="Home">
+                  <div class="icon-container">
+                    <i class="fas fa-home"></i>
+                    <h5>Home</h5>
+                  </div>
+                </a>
+                <a href="#" title="Chat">
+                  <div class="icon-container">
+                    <i class="fas fa-comments"></i>
+                    <h5>Chat</h5>
+                  </div>
+                </a>
+                <a href="#" title="Search">
+                  <div class="icon-container">
+                    <i class="fas fa-search"></i>
+                    <h5>Search</h5>
+                  </div>
+                </a>
+                <a href="#" title="Favorites">
+                  <div class="icon-container">
+                    <i class="fas fa-star"></i>
+                    <h5>Favorites</h5>
+                  </div>
+                </a>
+                <a href="#" title="Profile">
+                  <div class="icon-container">
+                    <i class="fas fa-user"></i>
+                    <h5>Profile</h5>
+                  </div>
+                </a>
+              </div>
+        </nav>
+            
+
+
+        <div class="main-container">
+            <div class="top-navbar">
+                <h1 class="settings-text">Shortlist</h1>
+            </div>
+            <div class="main-content">
+                <div class="list-group">
+                    <div class="alphabet-header">A</div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">Afrin Sabila</div>
+                                <div class="status">Life is beautiful 👌</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">Adil Adnan</div>
+                                <div class="status">Be your own hero 💪</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="alphabet-header">B</div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">Bristy Haque</div>
+                                <div class="status">Keep working ✍️</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">John Borino</div>
+                                <div class="status">Make yourself proud 😁</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">Borsha Akther</div>
+                                <div class="status">Flowers are beautiful 🌸</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="alphabet-header">S</div>
+                    <div class="list-group-item">
+                        <div class="item-content">
+                            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                            <div class="name-status">
+                                <div class="name">Sheik Sadi</div>
+                                <div class="status">Life is beautiful 👌</div>
+                            </div>
+                        </div>
+                        <div class="action-icons">
+                            <button class="heart-btn"><i class="bi bi-heart"></i></button>
+                            <button class="remove-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+      <!-- place footer here -->
+      <div class="bottom-bar d-md-none">
+        <a href="#" title="Home">
+          <div class="icon-container">
+            <i class="fas fa-home"></i>
+            <h5>Home</h5>
+          </div>
+        </a>
+        <a href="#" title="Chat">
+          <div class="icon-container">
+            <i class="fas fa-comments"></i>
+            <h5>Chat</h5>
+          </div>
+        </a>
+        <a href="#" title="Search">
+          <div class="icon-container">
+            <i class="fas fa-search"></i>
+            <h5>Search</h5>
+          </div>
+        </a>
+        <a href="#" title="Favorites">
+          <div class="icon-container">
+            <i class="fas fa-star"></i>
+            <h5>Favorites</h5>
+          </div>
+        </a>
+        <a href="#" title="Profile">
+          <div class="icon-container">
+            <i class="fas fa-user"></i>
+            <h5>Profile</h5>
+          </div>
+        </a>
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+  </body>
+</html> {% endcomment %}
+
