@@ -1,3 +1,4 @@
+/* matrimony navbar css */
 .navbar {
     background-color: rgb(255, 255, 255);
 }
@@ -121,9 +122,9 @@
         height: 40px;
     }
     
-    .bi {
+    /* .bi {
         font-size: large;
-    }
+    } */
     .Logo {
         width: 0px;
         height: 0px;
@@ -161,11 +162,11 @@
         height: 0px;
     }
     
-    .bi {
+    /* .bi {
         font-size: small;
         margin-left: 5px;
         margin-right: 5px;
-    }
+    } */
     .alert-icon {
         font-size: 18px;
         margin-right: 15px;
@@ -190,12 +191,6 @@
     .fixed-bottom-nav .nav-link {
         font-size: 20px;
     }
-
-    .bi {
-        font-size: small;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
     .alert-icon {
         font-size: 24px;
         margin-right: 15px;
@@ -204,4 +199,119 @@
         width: 0px;
         height: 0px;
     } */
+}
+
+/* footermenu css */
+
+body {
+    margin-bottom: 70px; /* Space for the fixed bottom bar */
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 10px 20px 20px 20px;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.bottom-bar a {
+    text-decoration: none;
+    color: white; /* Pink color for icons */
+    font-size: 24px;
+}
+
+.bottom-bar a:hover {
+    color: #ffffff; /* Slightly darker pink for hover effect */
+}
+
+.icon-container {
+    background-color: hotpink;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.icon-container:hover {
+    background-color: darkmagenta;
+}
+
+.icon-container i {
+    color: white;
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .bottom-bar {
+        padding: 5px 0;
+    }
+
+    .icon-container {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icon-container i {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .bottom-bar {
+        padding: 8px 0;
+    }
+
+    .icon-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-container i {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 993px) {
+    /* .bottom-bar {
+        padding: 10px 0;
+    } */
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 10px 20px 20px 20px;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .icon-container {
+        width: 45px;
+        height: 45px;
+    }
+
+    .icon-container i {
+        font-size: 22px;
+    }
 }
