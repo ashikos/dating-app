@@ -114,7 +114,7 @@ color: #070707;
 
 /* Footer menu styles */
 .bottom-bar {
-background-color: rgb(255, 255, 255);
+background-color: white;
 border-top: 1px solid #ddd;
 box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
 /* padding: 10px 0; */
