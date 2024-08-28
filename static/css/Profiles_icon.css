@@ -1,5 +1,5 @@
 .icon-large {
-    font-size: x-large;
+    font-size: x-large !important;
 }
 .icon-arrow {
     color: black;
@@ -7,6 +7,7 @@
 }
 .icon-sliders {
     color: black;
+    font-size: x-large !important;
 }
 .header-container {
     margin-top: 1rem;
@@ -46,7 +47,11 @@
         font-size:medium;
     }
     .bi {
-        font-size: xx-large;
+        font-size: xx-large !important;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: x-large !important;
     }
     .header-title {
         font-size: 1.5rem;
@@ -64,7 +69,11 @@
         font-size: large;
     }
     .bi {
-        font-size: xx-large;
+        font-size: xx-large !important;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: xx-large !important;
     }
     .header-title {
         font-size: 1.75rem;
@@ -88,6 +97,10 @@
     .icon-arrow {
         color: black;
         font-size: xx-large;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: xx-large !important;
     }
     .header-title {
         font-size: 2rem;
