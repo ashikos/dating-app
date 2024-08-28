@@ -8,9 +8,15 @@
     height: 300px; /* Adjust height as needed */
 }
 .profile-card a {
-    color: inherit;
+    color: inherit; 
     text-decoration: none;
 }
+
+.profile-card a:hover {
+    text-decoration: none; 
+    color: inherit; 
+}
+
 .profile-card img {
     width: 100%;
     height: 100%;
