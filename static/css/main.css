@@ -207,7 +207,7 @@ color: #333;
 }
 
 .offcanvas {
-background-color: #4B164C;
+background-color: #4B164C !important;
 color: white; /* Text color for offcanvas */
 }
 

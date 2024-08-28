@@ -185,11 +185,11 @@
     }
     .status-badge-kilometer {
         bottom: 70px;
-        left: 50px;
+        left: 90px;
         font-size: 14px;
     }
     .status-badge-match {
-        left: 70px;
+        left: 90px;
         font-size: 14px;
     }
     .action-buttons .btn {
@@ -199,7 +199,7 @@
     }
     .profile-info {
         bottom: 15px;
-        left: 50px;
+        left: 70px;
     }
     .profile-info h2 {
         margin: 0;
