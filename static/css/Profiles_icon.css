@@ -1,0 +1,114 @@
+.icon-large {
+    font-size: x-large !important;
+}
+.icon-arrow {
+    color: black;
+    font-size: x-large !important;
+}
+.icon-sliders {
+    color: black;
+    font-size: x-large !important;
+}
+.header-container {
+    margin-top: 1rem;
+}
+.header-title {
+    margin-bottom: 1rem;
+}
+.matches-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.matches-count {
+    color: deeppink;
+    margin-left: 10px;
+}
+.offcanvas-header {
+    padding: 1rem;
+}
+.offcanvas-title {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+.list-group-item-light {
+    background-color: #f8f9fa;
+    color: black;
+}
+.btn-custom {
+    margin-right: 1rem;
+}
+.btn-dark-custom {
+    background-color: darkmagenta;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .icon-large {
+        font-size:medium;
+    }
+    .bi {
+        font-size: xx-large !important;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: x-large !important;
+    }
+    .header-title {
+        font-size: 1.5rem;
+    }
+    .matches-header h4 {
+        font-size: 1.25rem;
+    }
+    .matches-count {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .icon-large {
+        font-size: large;
+    }
+    .bi {
+        font-size: xx-large !important;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: xx-large !important;
+    }
+    .header-title {
+        font-size: 1.75rem;
+    }
+    .matches-header h4 {
+        font-size: 1.5rem;
+    }
+    .matches-count {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .icon-large {
+        color: black;
+        font-size: xx-large;
+    }
+    .bi {
+        font-size: xx-large !important;
+    }
+    .icon-arrow {
+        color: black;
+        font-size: xx-large;
+    }
+    .icon-sliders {
+        color: black;
+        font-size: xx-large !important;
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+    .matches-header h4 {
+        font-size: 1.75rem;
+    }
+    .matches-count {
+        font-size: 1.75rem;
+    }
+}

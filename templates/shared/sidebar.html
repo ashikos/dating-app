@@ -1,5 +1,6 @@
 {%load static%}
 <link rel="stylesheet" href="{% static 'css/sidebar.css'%}">
+
 <nav class="col-lg-3 col-md-4 sidebar d-none d-md-block">
     <div class="back-image d-none d-lg-block">
         <a href="#"><img src="{% static 'images/sample/Back.svg' %}" alt="Back" class="img-fluid"></a>
@@ -14,5 +15,7 @@
     <a href="{% url 'messages'%}">Messages</a>
     <a href="{% url 'edit_profile'%}">Edit Profile</a>
     <a href="{% url 'settings' %}">Settings</a>
+   
+
    
 </nav>
