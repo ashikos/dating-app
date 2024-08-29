@@ -63,7 +63,9 @@ ROOT_URLCONF = 'dating_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./templates'],
+        'DIRS': ['./templates',
+                 os.path.join(BASE_DIR, 'matrimony/templates')
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

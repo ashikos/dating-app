@@ -3,8 +3,14 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
+class SigninView(TemplateView):
+    template_name = 'Register/temp/login.html'
+
+class SignupView(TemplateView):
+    template_name = 'Register/temp/register.html'
+
 def TestView(request):
-    return render(request, 'index.html')
+    return render(request, 'Register/temp/login.html')
 
 def accept_view(request):
     return render(request, 'accept.html')
