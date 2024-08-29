@@ -1,0 +1,253 @@
+.profile-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    color: white;
+    text-align: left;
+    width: 100%; /* Full width to adapt to the grid */
+    height: 300px; /* Adjust height as needed */
+    
+}
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 7px solid hotpink;
+}
+.status-badge-kilometer {
+    position: absolute;
+    bottom: 70px;
+    left: 90px;
+    background: rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.status-badge-match {
+    position: absolute;
+    top: 0px;
+    left: 90px;
+    background: hotpink;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px 0px 20px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.action-buttons {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.action-buttons .btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-info {
+    position: absolute;
+    bottom: 15px;
+    left: 70px;
+    text-align: center;
+    
+}
+.profile-info h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile-info p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    letter-spacing: .25px;
+}
+
+.btn-group-custom {
+    display: flex;
+    border: 5px solid whitesmoke;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.btn-group-custom .btn {
+    border: 2px solid whitesmoke;
+    color: black;
+    background-color: pink;
+    font-size: 16px;
+    text-transform: uppercase;
+    flex: 1;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-group-custom .btn:hover {
+    background-color: white;
+    color: blue;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .profile-card {
+        width: 100%; /* Full width to adapt to the grid */
+        height: 200px; /* Adjust height as needed */
+    }
+    .status-badge-kilometer {
+        font-size: 10px;
+        bottom: 55px;
+        left: 55px;
+    }
+    .status-badge-match {
+        font-size: 10px;
+        left: 55px;
+    }
+    .action-buttons .btn {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+    }
+    .profile-info {
+        bottom: 15px;
+        left: 45px;
+    }
+    .profile-info h2 {
+        font-size: 14px;
+        margin: 0;
+        font-weight: bold;
+    }
+    .profile-info p {
+        font-size: 10px;
+        margin: 2px 0 0;
+        letter-spacing: .25px;
+    }
+    .btn-group-custom .btn {
+        font-size: 14px;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .profile-card {
+        width: 100%; /* Full width to adapt to the grid */
+        height: 250px; /* Adjust height as needed */
+    }
+    .status-badge-kilometer {
+        font-size: 10px;
+        bottom: 55px;
+        left: 85px;
+    }
+    .status-badge-match {
+        font-size: 10px;
+        left: 85px;
+    }
+    .action-buttons .btn {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+    }
+    .profile-info {
+        bottom: 15px;
+        left: 65px;
+    }
+    .profile-info h2 {
+        font-size: 16px;
+        margin: 0;
+        font-weight: bold;
+    }
+    .profile-info p {
+        font-size: 12px;
+        margin: 2px 0 0;
+        letter-spacing: .25px;
+    }
+    .btn-group-custom .btn {
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1440px) {
+    .profile-card {
+        width: 100%; /* Full width to adapt to the grid */
+        height: 300px; /* Adjust height as needed */
+    }
+    .status-badge-kilometer {
+        bottom: 70px;
+        left: 90px;
+        font-size: 14px;
+    }
+    .status-badge-match {
+        left: 90px;
+        font-size: 14px;
+    }
+    .action-buttons .btn {
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+    .profile-info {
+        bottom: 15px;
+        left: 70px;
+    }
+    .profile-info h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+    .profile-info p {
+        margin: 2px 0 0;
+        font-size: 14px;
+        letter-spacing: .25px;
+    }
+    .btn-group-custom .btn {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .profile-card {
+        width: 100%; /* Full width to adapt to the grid */
+        height: 300px; /* Adjust height as needed */
+    }
+    .status-badge-kilometer {
+        bottom: 70px;
+        left: 100px;
+        font-size: 14px;
+    }
+    .status-badge-match {
+        left: 115px;
+        font-size: 14px;
+    }
+    .action-buttons .btn {
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+    .profile-info {
+        bottom: 15px;
+        left: 95px;
+    }
+    .profile-info h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+    .profile-info p {
+        margin: 2px 0 0;
+        font-size: 14px;
+        letter-spacing: .25px;
+    }
+    .btn-group-custom .btn {
+        font-size: 18px;
+    }
+}

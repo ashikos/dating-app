@@ -1,17 +1,22 @@
 .navbar {
     background-color: rgb(255, 255, 255);
 }
+
 .navbar-brand {
     color: black;
 }
+
 .navbar-nav .nav-link {
     color: black;
 }
+
 .navbar-nav .nav-link:hover {
     color: #333; /* Darker color on hover */
 }
-.offcanvas{
-    background-color: #4a154b;
+
+.offcanvas {
+    background-color: #4B164C;
+    color: white; /* Text color for offcanvas */
 }
 
 .offcanvas-header {
@@ -20,69 +25,183 @@
     justify-content: center;
     padding: 1rem;
 }
+
 .profile-pic {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: auto; /* Pushes the profile picture to the left */
+    margin-right: 10px; /* Pushes the profile picture to the left */
 }
-
-
 
 .close-btn {
     border: none;
     background: none;
     font-size: 24px;
-    color: #000;
+    color: #fff;
     margin-left: auto; /* Pushes the close button to the right */
     cursor: pointer;
 }
+
 .offcanvas-body {
     padding: 1rem;
 }
+
 .list-group-item {
     border-radius: 0;
 }
+
 .list-group-item:hover {
     background-color: #ffffff; /* Light background on hover */
 }
+
 .text-color-red {
     color: red;
 }
-.fixed-bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    border-radius: 25px 25px 0 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+
+.icon-spacing {
+    margin-right: 10px; /* Adjust the value as needed for the desired space */
+}
+
+.bi .bi-list {
+    font-size: large;
+    margin-right: auto;
+    margin-left: 10px;
+}
+.alert-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.alert-icon-success {
+    color: green;
+}
+
+.alert-icon-info {
+    color: yellow;
+}
+
+.alert-icon-error {
+    color: red;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        order: 1; /* Moves the text to the left */
+        margin-left: 0;
+    }
+
+    .navbar-toggler {
+        order: 0; /* Keeps the toggle button in its place */
+    }
+    
+    .profile-pic {
+        order: 3; /* Moves profile pic to the right */
+        margin-left: 0; /* Remove margin */
+    }
+    
+    .bi-bell {
+        order: 2; /* Moves bell icon to the right */
+        margin-left: auto; /* Aligns to the right */
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .bi {
+        font-size: large;
+    }
+    .Logo {
+        width: 0px;
+        height: 0px;
+    }
+    .flex-grow-1 h5,h6,p{
+        font-size: small;
+    }
+    .alert-icon {
+        font-size: 16px;
+        margin-right: 15px;
+    }
 
 }
-.fixed-bottom-nav .nav-item {
-    flex: 1;
-    text-align: center;
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .profile-pic {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .offcanvas-body .list-group-item {
+        font-size: 0.9rem;
+    }
+
+    .fixed-bottom-nav .nav-link {
+        font-size: 19px;
+    }
+
+    .Logo {
+        width: 0px;
+        height: 0px;
+    }
+    
+    .bi {
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .alert-icon {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    
 }
-.fixed-bottom-nav .nav-link {
-    color: pink;
-    font-size: 20px;
-}
-.icon-spacing {
-margin-right: 10px; /* Adjust the value as needed for the desired space */
-}
-.payment-method img {
-    max-width: 50px;
-    margin-right: 15px; /* Space between image and text */
-}
-.payment-method .details {            
-    flex: 1; /* Take up the remaining space */
-}
-.payment-method .details p {
-    margin: 0;
+
+@media (min-width: 993px) {
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .offcanvas-body .list-group-item {
+        font-size: 1rem;
+    }
+
+    .fixed-bottom-nav .nav-link {
+        font-size: 20px;
+    }
+
+    .bi {
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .alert-icon {
+        font-size: 24px;
+        margin-right: 15px;
+    }
+    /* .Logo {
+        width: 50px;
+        height: 50px;
+    } */
 }

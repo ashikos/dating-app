@@ -1,0 +1,57 @@
+.payment-method {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /*Space out the image and text */
+}
+.payment-method:hover {
+    background-color: #f9f9f9;
+}
+.default-method {
+    font-weight: bold;
+    color: #6c757d;
+}
+.payment-method img {
+    max-width: 50px;
+    margin-right: 15px; /* Space between image and text */
+}
+.payment-method .details {            
+    flex: 1; /* Take up the remaining space */
+}
+.payment-method .details p {
+    margin: 0;
+}
+
+
+.scan-button {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between button and other elements */
+}
+.scan-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+.form-control {
+    margin-bottom: 10px;
+}
+.payment-method-icons img {
+    max-width: 50px;
+    margin-right: 10px; /* Space between images */
+}
+.payment-method-icons {
+    margin-top: 20px; /* Space above icons */
+}
+.payment-method-icons p {
+    margin: 0;
+    font-size: 14px; /* Smaller font size for the caption */
+}

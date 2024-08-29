@@ -8,37 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .scan-button {
-            display: flex;
-            align-items: center;
-            background-color: #000000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-            margin-bottom: 10px; /* Space between button and other elements */
-        }
-        .scan-button i {
-            margin-right: 5px; /* Space between icon and text */
-        }
-        .form-control {
-            margin-bottom: 10px;
-        }
-        .payment-method-icons img {
-            max-width: 50px;
-            margin-right: 10px; /* Space between images */
-        }
-        .payment-method-icons {
-            margin-top: 20px; /* Space above icons */
-        }
-        .payment-method-icons p {
-            margin: 0;
-            font-size: 14px; /* Smaller font size for the caption */
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
 </head>
 <body>
     <div class="container mt-5">
