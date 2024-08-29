@@ -3,10 +3,10 @@ from jobPortal import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'jobportal'
+app_name = 'JobPortal'
 
 urlpatterns = [
-                  path('',views.home),
+                  path('',views.home,name='home'),
                   path('about/',views.about),
                   path('contact/',views.contact),
                   path('register/',views.user_register,name='register'),

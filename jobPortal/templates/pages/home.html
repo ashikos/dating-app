@@ -1,4 +1,4 @@
-{% extends 'base_template.html'%}
+{% extends 'layout/base_template.html'%}
 {% load static %}
 {% block title %}Home{% endblock title %}
 
@@ -13,7 +13,7 @@
         <!--Nav Outer -->
         <div class="nav-outer">
           <div class="logo-box">
-            <div class="logo"><a href="index.html"><img src="{% static 'images/logo-2.svg' %}" alt="" title=""></a></div>
+            <div class="logo"><a href="{% url 'JobPortal:home' %}"><img src="{% static 'images/logo-2.svg' %}" alt="" title=""></a></div>
           </div>
 
           {% include 'particles/navbar.html' %}
