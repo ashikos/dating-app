@@ -2107,15 +2107,6 @@ Ads Section
   font-weight: 400;
 }
 
-
-
-/*==========================
-Main Banner
-===========================*/
-.banner-section-four {
-  background-image: url(../images/background/2.png);
-}
-
 /*==========================
 Banner Box One
 ===========================*/
@@ -5129,7 +5120,6 @@ Main Footer
 
 ***/
 .main-footer {
-  background-image: url(../images/background/3.png);
   position: relative;
   background-color: #ffffff;
 }

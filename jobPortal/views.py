@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # ###############BASIC PAGE##################
 def home(request):
-    return render(request,'pages/home.html')
+    return render(request,'JobPortal/pages/home.html')
 def contact (request):
     return render(request,'pages/contact.html')
 
@@ -20,7 +20,7 @@ def about (request):
 
 
 def login(request):
-    return render(request,'registration/login.html')
+    return render(request,'JobPortal/registration/login.html')
 def user_register(request):
     return render(request,'registration/register.html')
 
@@ -40,11 +40,11 @@ def job_details(request):
     return render(request,'Job/job_detail.html')
 
 def job_create(request):
-    return render(request,'Job/job_create.html')
+    return render(request,'JobPortal/Job/job_create.html')
 
 
 def job_update(request):
-    return render(request,'Job/job_update.html')
+    return render(request,'JobPortal/Job/job_update.html')
 
 def job_delete(request):
     return render(request,'Job/job_delete.html')
