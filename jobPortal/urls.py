@@ -11,6 +11,7 @@ urlpatterns = [
                   path('jobsingle3/', views.jobsingle3, name='jobsingle3'),
                   path('jobsingle4/', views.jobsingle4, name='jobsingle4'),
                   path('jobsingle5/', views.jobsingle5, name='jobsingle5'),
+                  path('index8/', views.index8, name='index8'),
               ]
 
 

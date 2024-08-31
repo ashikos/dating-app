@@ -44,7 +44,7 @@
         <!--Nav Outer -->
         <div class="nav-outer">
           <div class="logo-box">
-            <div class="logo"><a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="" title=""></a></div>
+            <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="" title=""></a></div>
           </div>
 
           <nav class="nav main-menu">
@@ -276,7 +276,7 @@
 
       <!-- Mobile Header -->
       <div class="mobile-header">
-        <div class="logo"><a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="" title=""></a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="" title=""></a></div>
 
         <!--Nav Box-->
         <div class="nav-outer clearfix">
@@ -513,7 +513,7 @@
                 <p>Advertise your jobs to millions of monthly users and search 15.8 million CVs in our database.</p>
                 <a href="#" class="theme-btn btn-style-one bg-blue"><span class="btn-title">Start Recruiting
                     Now</span></a>
-                <div class="image" style="background-image: url({% static 'images/resource/ads-bg-4.png' %});"></div>
+                <div class="image" style="background-image: url(images/resource/ads-bg-4.png);"></div>
               </div>
               <!-- End Call To Action -->
             </div>
@@ -553,29 +553,29 @@
 
               <!-- Job Block -->
               
-              <ul id="myUL">{% for job in joblist %}
+              <ul id="myUL">
                 <li class="job-item">
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-1.png' %}" alt=""></span>
-                        <h4><a href="{% url 'jobPortal:jobsingle1' %}">{{job.job_title}}</a></h4>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-1.png" alt=""></span>
+                        <h4><a href="{% url 'jobPortal:jobsingle1' %}">Software Engineer (Android), Libraries</a></h4>
                         <ul class="job-info">
-                          <li><span class="icon flaticon-briefcase"></span> {{job.segment}}</li>
-                          <li><span class="icon flaticon-map-locator"></span>{{job.location}}</li>
-                          <li><span class="icon flaticon-clock-3"></span> {{job.posted_at}} hours ago</li>
-                          <li><span class="icon flaticon-money"></span> Rs.{{job.monthly_salary_min}} - Rs{{job.monthly_salary_max}}</li>
+                          <li><span class="icon flaticon-briefcase"></span> Segment</li>
+                          <li><span class="icon flaticon-map-locator"></span> London, UK</li>
+                          <li><span class="icon flaticon-clock-3"></span> 11 hours ago</li>
+                          <li><span class="icon flaticon-money"></span> $35k - $45k</li>
                         </ul>
                         <ul class="job-other-info">
-                          <li class="time">{{job.job_type}}</li>
-                          <li class="privacy">{{job.type_of_firm}}</li>
-                          <li class="required">{{job.requirement}}</li>
+                          <li class="time">Full Time</li>
+                          <li class="privacy">Private</li>
+                          <li class="required">Urgent</li>
                         </ul>
                         <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
                       </div>
                     </div>
                   </div>
-                </li>{% endfor %}
+                </li>
 
 
                 <!-- Job Block -->
@@ -583,7 +583,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-2.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-2.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle2' %}">Recruiting Coordinator</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -606,7 +606,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-3.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-3.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle3' %}">Product Manager, Studio</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -629,7 +629,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-4.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-4.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle4' %}">Senior Product Designer</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -652,7 +652,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-5.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-5.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle5' %}">Senior Full Stack Engineer, Creator Success</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -675,7 +675,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-7.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-7.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle1' %}">Software Engineer (Android), Libraries</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -698,7 +698,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-8.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-8.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle2' %}">Recruiting Coordinator</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -721,7 +721,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-9.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-9.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle3' %}">Product Manager, Studio</a></h4>
                         <ul class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -744,7 +744,7 @@
                   <div class="job-block">
                     <div class="inner-box">
                       <div class="content">
-                        <span class="company-logo"><img src="{% static 'images/resource/company-logo/1-1.png' %}" alt=""></span>
+                        <span class="company-logo"><img src="images/resource/company-logo/1-1.png" alt=""></span>
                         <h4><a href="{% url 'jobPortal:jobsingle4' %}">Senior Product Designer</a></h4>
                         <ol class="job-info">
                           <li><span class="icon flaticon-briefcase"></span> Segment</li>
@@ -786,7 +786,7 @@
           <div class="row">
             <div class="big-column col-xl-4 col-lg-3 col-md-12">
               <div class="footer-column about-widget">
-                <div class="logo"><a href="#"><img src="{% static 'images/logo.svg' %}" alt=""></a></div>
+                <div class="logo"><a href="#"><img src="images/logo.svg" alt=""></a></div>
                 <p class="phone-num"><span>Call us </span><a href="thebeehost%40support.html">123 456 7890</a></p>
                 <p class="address">329 Queensberry Street, North Melbourne VIC<br> 3051, Australia. <br><a
                     href="mailto:support@superio.com" class="email">support@superio.com</a></p>

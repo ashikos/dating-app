@@ -3,23 +3,23 @@ from django.db import models
 
 class JobProfile(models.Model):
     job_title = models.CharField(max_length=255)
-    company_name = models.CharField(max_length=255)
+    segment = models.CharField(max_length=100)
     location = models.CharField(max_length=255)
+    posted_at = models.CharField(max_length=5)
     monthly_salary_min = models.DecimalField(max_digits=10, decimal_places=2)
     monthly_salary_max = models.DecimalField(max_digits=10, decimal_places=2)
-    skills = models.TextField()
-    benefits = models.TextField()
+    expiration_date = models.DateTimeField()
+    hours = models.CharField(max_length=5)
     job_description = models.TextField()
-    job_requirements = models.TextField()
-    about_company = models.TextField()
-    hr_email = models.EmailField()
-    employer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    posted_time = models.DateTimeField(auto_now_add=True)
-    experience_level = models.CharField(max_length=50, choices=[
-        ('entry', 'Entry Level'),
-        ('mid', 'Mid Level'),
-        ('senior', 'Senior Level'),
-        ('lead', 'Lead Level')
+    key_responsibilities = models.TextField()
+    skill_experience = models.TextField()
+    type_of_firm = models.CharField(max_length=50, choices=[
+        ('private', 'Private'),
+        ('public', 'Public')
+    ])
+    requirement = models.CharField(max_length=50, choices=[
+        ('urgent', 'Urgent'),
+        ('within_1_month', 'Within 1 Month')
     ])
     job_type = models.CharField(max_length=50, choices=[
         ('full-time', 'Full-Time'),
@@ -28,25 +28,12 @@ class JobProfile(models.Model):
         ('temporary', 'Temporary'),
         ('internship', 'Internship')
     ])
-    category = models.ForeignKey('JobCategory', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.job_title
 
-    def split_skills(self):
-        return self.skills.split(',')
+    def get_key_responsibilities(self):
+        return self.key_responsibilities.split('.')
 
-    def split_benefits(self):
-        return self.benefits.split(',')
-
-    def split_job_description(self):
-        return self.job_description.split(',')
-
-    def split_job_requirements(self):
-        return self.job_requirements.split(',')
-
-class JobCategory(models.Model):
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
+    def get_skill_experience(self):
+        return self.skill_experience.split(',')

@@ -7,7 +7,9 @@ def TestView(request):
     return render(request, 'index.html')
 
 def joblist(request):
-    return render(request, 'joblist.html')
+    joblist = JobProfile.objects.all()
+    
+    return render(request, 'joblist.html',{'joblist':joblist})
 
 def jobsingle1(request):
     return render(request, 'job-single-1.html')
@@ -23,3 +25,6 @@ def jobsingle4(request):
 
 def jobsingle5(request):
     return render(request, 'job-single-5.html')
+
+def index8(request):
+    return render(request, 'index/index-8.html')
