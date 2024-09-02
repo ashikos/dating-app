@@ -1,0 +1,40 @@
+body {
+    background-color: #4B164C; /* Dark purple background */
+    color: #E3CE64; /* Light yellow text color */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-right: 20px;
+}
+.error-container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+}
+.error-code {
+    font-size: 8rem;
+    font-weight: bold;
+}
+.error-message {
+    font-size: 1.5rem;
+    margin-top: -10px;
+}
+.error-description {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+.btn-custom {
+    background-color: #3F3F7A;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid #E3CE64;
+}
+.btn-custom:hover {
+    background-color: #2F2F6A;
+}
