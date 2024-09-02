@@ -1,0 +1,62 @@
+<div class="sidebar-backdrop"></div>
+
+    <!-- User Sidebar -->
+    <div class="user-sidebar">
+
+      <div class="sidebar-inner">
+        <ul class="navigation">
+          <li class="active"><a href="{% url 'jobs:dash_view' %}"> <i class="la la-home"></i> Dashboard</a></li>
+          <li><a href="{% url 'jobs:profileview' %}"><i class="la la-user-tie"></i>My Profile</a></li>
+          <li><a href="candidate-dashboard-resume.html"><i class="la la-file-invoice"></i>My Resume</a></li>
+          <li><a href="{% url 'jobs:applied_jobs' %}"><i class="la la-briefcase"></i> Applied Jobs </a></li>
+          <li><a href="#"><i class="la la-bell"></i>Job Alerts</a></li>
+          <li><a href="{% url 'jobs:short_lists' %}"><i class="la la-bookmark-o"></i>Shortlisted Jobs</a></li>
+          <li><a href="#"><i class="la la-file-invoice"></i> CV manager</a></li>
+          <li><a href="#"><i class="la la-comment-o"></i>Messages</a></li>
+          <li><a href="{% url 'jobs:change_password' %}"><i class="la la-lock"></i>Change Password</a></li>
+          <li><a href="#"><i class="la la-sign-out"></i>Logout</a></li>
+          <li><a href="#"><i class="la la-trash"></i>Delete Profile</a></li>
+        </ul>
+
+        <div class="skills-percentage">
+          <h4>Skills Percentage</h4>
+          <p>Put value for "Cover Image" field to increase your skill up to "85%"</p>
+
+          <!-- Pie Graph -->
+          <div class="pie-graph">
+            <div class="graph-outer">
+              <input type="text" class="dial" data-fgColor="#7367F0" data-bgColor="transparent" data-width="234" data-height="234" data-linecap="normal" value="30">
+              <div class="inner-text count-box"><span class="count-text txt" data-stop="30" data-speed="2000"></span>%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+        #toggle-user-sidebar {
+      position: fixed; /* Fixes the button in the viewport */
+      bottom: 20px; /* Distance from the bottom of the viewport */
+      right: 20px; /* Distance from the right of the viewport */
+      background-color: #2279d6; /* Button background color */
+      border: none; /* Remove default border */
+      color: white; /* Text color */
+      padding: 10px 20px; /* Padding inside the button */
+      border-radius: 50%; /* Rounded button */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 24px; /* Font size for the icon */
+      transition: background-color 0.3s ease; /* Smooth background color transition */
+      z-index: 1000; /* Ensure the button is above other content */
+    }
+    
+        #toggle-user-sidebar:hover {
+          background-color: #0056b3; /* Darker background color on hover */
+        }
+    
+        .flaticon-menu-1 {
+          font-size: 20px; /* Size of the icon */
+        }
+      </style>
+      <button id="toggle-user-sidebar">
+        <span class="flaticon-menu-1"></span>
+      </button>
