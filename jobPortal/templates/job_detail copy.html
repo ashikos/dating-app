@@ -1,0 +1,31 @@
+<!-- job_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ job.job_title }}</title>
+</head>
+<body>
+    <h1>{{ job.job_title }}</h1>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Posted At:</strong> {{ job.posted_at }}</p>
+    <p><strong>Salary:</strong> {{ job.monthly_salary_min }} - {{ job.monthly_salary_max }}</p>
+    <p><strong>Hours:</strong> {{ job.hours }}</p>
+    <p><strong>Job Description:</strong></p>
+    <p>{{ job.job_description }}</p>
+    <p><strong>Key Responsibilities:</strong></p>
+    <ul>
+        {% for responsibility in job.get_key_responsibilities %}
+            <li>{{ responsibility }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Skill Experience:</strong></p>
+    <ul>
+        {% for skill in job.get_skill_experience %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Type of Firm:</strong> {{ job.get_type_of_firm_display }}</p>
+    <p><strong>Requirement:</strong> {{ job.get_requirement_display }}</p>
+    <p><strong>Job Type:</strong> {{ job.get_job_type_display }}</p>
+</body>
+</html>

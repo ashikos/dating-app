@@ -6,6 +6,7 @@ app_name = 'jobPortal'
 urlpatterns = [
                   path('', views.TestView, name='test'),
                   path('joblist/', views.joblist, name='joblist'),
+                  path('jobs/<int:pk>/', views.job_detail, name='job_detail'),
                   path('jobsingle1/', views.jobsingle1, name='jobsingle1'),
                   path('jobsingle2/', views.jobsingle2, name='jobsingle2'),
                   path('jobsingle3/', views.jobsingle3, name='jobsingle3'),
