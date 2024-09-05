@@ -1,45 +1,53 @@
 {% extends 'Register/temp/regLayout.html' %}
 
 {% load static %}
-    {%block content%}
-        <div class="form-section col-lg-6 col-md-12">
-            <h2 class="text-center">Register</h2>
-            <form id="signupForm" class="form">
-                <div class="mb-3">
-                    <label for="email" class="form-label">First name</label>
-                    <input required type="text"  class="form-control" id="fristName" placeholder="Enter your first nanme">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Last name</label>
-                    <input required type="text"  class="form-control" id="lastName" placeholder="Enter your last name">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input required type="email"  class="form-control" id="email" placeholder="Enter your email">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" required class="form-control" id="password" placeholder="Enter your password">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Confirm Password</label>
-                    <input type="password" required class="form-control" id="confirmPassword" placeholder="Enter your password">
-                </div>
-                <button type="submit" class="btn  w-100">Sign up</button>
-                <div class="text-center mt-3">
-                    <p> <a href="{% url 'login' %}">login</a></p>
-                </div>
-            </form>
-            <script>
-                document.getElementById('signupForm').addEventListener('submit', function(event) {
-                    var password = document.getElementById('password').value;
-                    var confirmPassword = document.getElementById('confirmPassword').value;
-                    
-                    if (password !== confirmPassword) {
-                        alert('Passwords do not match.');
-                        event.preventDefault();
-                    }
-                });
-            </script>
+{% block content %}
+<div class="form-section col-lg-6 col-md-12">
+    <h2 class="text-center">Register</h2>
+    <form id="signupForm" class="form" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="fristName" class="form-label">First name</label>
+            <input required type="text" class="form-control" id="fristName" name="firstName" placeholder="Enter your first name">
         </div>
-    {%endblock%}
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last name</label>
+            <input required type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input required type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" required class="form-control" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" required class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn w-100">Sign up</button>
+        <div class="text-center mt-3">
+            <p> <a href="{% url 'login' %}">login</a></p>
+        </div>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</div>
+{% endblock %}

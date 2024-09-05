@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/Main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
       {% block extra_css %}
 
@@ -56,7 +56,7 @@
                 <div class="flex-grow-1">
                     <div class="list-group text-center">
                         <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Dating</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Matrimony</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'home' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Matrimony</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">E commerce</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Study Abroad</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Job Portal</a>
@@ -93,7 +93,7 @@
                   
                 <div class="flex-grow-1">
                     <div class="list-group text-start">
-                        <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">My Profile</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'userprofile' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">My Profile</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'sent' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Sent Request</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'viewedmyprofile' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Viewed My Profile</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'accept' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Accept Request</a>
@@ -103,7 +103,7 @@
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'shortlist' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Shortlisted</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'contacted' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Contacted</a>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'messages' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Message</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light" href="#" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Settings</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light" href="{% url 'settings' %}" style="background-color: unset; color: white; transition: background-color 0.3s;border: none;" onmouseover="this.style.backgroundColor='#FF6978'" onmouseout="this.style.backgroundColor='unset'">Settings</a>
                     </div>
                 </div>
                 <div class="logout mt-2">

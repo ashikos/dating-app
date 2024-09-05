@@ -1,0 +1,64 @@
+{% extends 'shared/Main.html'%}
+
+{% load static %}
+
+
+      {% block extra_css %}
+      <link rel="stylesheet" href="{% static 'css/menupage.css' %}">
+       {% endblock extra_css %}
+
+
+{% block content%}
+<main>
+    <style>
+       
+
+    </style>
+<main>
+            
+        <div class="main-container mt-5">
+            <div class="m-top-navbar">
+                <a href="{% url 'messages' %}" class="back-button"><i class="fas fa-chevron-left"></i></a>
+                <h1 class="page-title text-white">Sandra Thomas</h1>
+                <i class="bi bi-telephone text-warning phone"></i>
+            </div>
+            <div class="chat main-content mt-5">
+                <div class="date-container">
+                    <div class="date mb-5">
+                        <h6>Today</h6>
+                    </div>
+                </div>
+
+                <div class="message-container user my-3 py-3">
+                    <div class="message">hi necolas good evening</div>
+                </div>
+                <div class="message-container user my-3 py-3">
+                    <div class="message">how was your ui/ux design course like. ?</div>
+                </div>
+                <div class="message-container partner my-3 py-3">
+                    <div class="message">hi, morning too ronald</div>
+                </div>
+                <div class="message-container partner my-3 py-3">
+                    <div class="message">hello i also just finished the sketch basic</div>
+                </div>
+        
+                <div class="message-container user my-3 py-3">
+                    <div class="message">omg this is amazing</div>
+                </div>
+                <div class="messagesend">
+                    <div class="typebox">
+                        <input type="text" placeholder="Message">
+                        <i class="bi bi-paperclip"></i>
+                    </div>
+                    <i class="bi bi-mic bg-primary text-white"></i>
+                </div>
+            </div>
+
+         
+        </div>
+
+
+</main>
+
+{% endblock content%}
+

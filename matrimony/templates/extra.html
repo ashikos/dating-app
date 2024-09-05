@@ -1,173 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <style>
-        .additional {
-            padding: 20px;
-            border: 2px solid rgb(189, 189, 189);
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .dropdown {
-            border: 2px solid rgb(189, 189, 189);
-            border-radius: 10px;
-        }
-        .dropdown .btn {
-            border: none;
-            background: transparent;
-            color: rgb(75, 74, 75);
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            margin-left:-45px;
+{% extends 'shared/Main.html' %}
+{% load static %}
 
+{% block content %}
+<main>
+  <div class="container additional mt-5 w-50">
+    <h1>Additional Details</h1>
+    <form method="post" action="{% url 'extra' %}">
+      {% csrf_token %}
+      {{ profile_form.as_p }}
 
-        }
-        .dropdown .btn .bi-chevron-down {
-            color: rgb(62, 60, 62);
-            margin-right:-30px;
-        }
-        .dropdown .dropdown-menu {
-            min-width: 200px;
-        }
-        .detailbox {
-            border: 2px solid rgb(189, 189, 189);
-            border-radius: 10px;
-            width: 100%;
-            padding: 10px 15px;
-            margin-bottom: 10px;
-        }
-        .detailbox-container {
-            display: flex;
-            align-items: center;
-        }
-        .detailbox-container .bi-plus-lg {
-            margin-left: auto;
-            margin-right: 10px;
-            color: rgb(82, 80, 82);
-            cursor: pointer;
-        }
-        .btn-dark {
-            background-color: rgb(8, 8, 8);
-            border: none;
-            color: white;
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .plus {
-            border: 2px solid rgb(189, 189, 189);
-            border-radius: 10px;
-            width: 100%;
-            padding: 10px 15px;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container additional mt-5 w-50">
-        <h1>Additional Details</h1>
-        
-        <div class="dropdown ps-5  mt-4 mb-2">
-            <button class="btn btn-transparent text-start" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Martial Status
-                <i class="bi bi-chevron-down "></i>
+      <!-- Partner Expectations Button and Modal -->
+      <div class="container mt-5">
+        <button type="button" class="btn partnerbtn btn-dark" data-bs-toggle="modal" data-bs-target="#partnerExpectationsModal">
+          Set Partner Expectations
+        </button>
 
-            </button>
+        <!-- Modal -->
+        <div class="modal fade" id="partnerExpectationsModal" tabindex="-1" aria-labelledby="partnerExpectationsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-3">
+              <div class="modal-header">
+                <h5 class="modal-title" id="partnerExpectationsModalLabel">Partner Expectations</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                {{ expectations_form.as_p }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" name="save_expectations" class="btn btn-dark">Save Expectations</button>
+      <button type="submit" name="save_profile" class="btn btn-dark">Save</button>
+    </form>
+  </div>
+</main>
 
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Single</a></li>
-                <li><a class="dropdown-item" href="#">Divorced</a></li>
-            </ul>
-        </div>
-        
-        <!-- Your other form fields here -->
-        <div class="detailbox-container">
-            <input type="text" placeholder="Annual Income" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Family Type" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Family Name" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Father's Name" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Father's Occupation" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Mother's Name" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Mother's Occupation" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Number Of Sibling's" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container plus">
-            <input type="text" placeholder="Number Of Sibling's Married" class="border-0">
-            <i class="bi bi-plus-lg"></i>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Sibling's Name & Details" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Height" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Weight" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Body Type" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Complexion" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container plus">
-            <input type="text" placeholder="Disabilities" class="border-0">
-            <i class="bi bi-plus-lg"></i>
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Religion" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Cast/Community" class="detailbox">
-        </div>
-        
-        <div class="detailbox-container">
-            <input type="text" placeholder="Expectation from Partner" class="detailbox">
-        </div>
-
-        <input type="button" value="Next" class="btn btn-dark">
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
-</html>
+<!-- Custom CSS -->
+<style>
+  .modal-lg {
+    max-width: 50% !important;
+  }
+</style>
+{% endblock content %}
